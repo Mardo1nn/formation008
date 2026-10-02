@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVA INSTITUTE — Formation Professionnelle</title>
+<meta name="description" content="NOVA INSTITUTE - Développez vos compétences. Formations pratiques et professionnelles.">
+<meta name="theme-color" content="#3E2723">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=playfair-display:400,600,700|inter:300,400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{--brown-dark:#3E2723;--brown:#5D4037;--brown-medium:#795548;--brown-light:#8D6E63;--beige:#F5F0EB;--beige-light:#FAF7F4;--white:#FFFFFF;--gold:#C9A96E;--gold-light:#D4B87A;--gold-dark:#A88B4A;--text-dark:#2C1810;--text-medium:#5D4037;--text-light:#8D6E63;--success:#4CAF50;--warning:#FF9800;--danger:#E53935;--shadow:0 4px 20px rgba(62,39,35,0.08);--shadow-hover:0 8px 32px rgba(62,39,35,0.15);--radius:12px;--radius-lg:20px;--transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--beige-light);color:var(--text-dark);line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.3}
+.announcement-bar{background:linear-gradient(135deg,var(--brown-dark),var(--brown));color:var(--gold-light);padding:10px 0;overflow:hidden;position:relative;z-index:1001}
+.announcement-bar .marquee{display:flex;animation:marquee 30s linear infinite;white-space:nowrap}
+.announcement-bar .marquee span{padding:0 50px;font-size:0.85rem;font-weight:500;letter-spacing:0.5px}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.navbar{background:var(--white);box-shadow:var(--shadow);position:sticky;top:0;z-index:1000;padding:0 20px}
+.nav-container{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer}
+.nav-logo-icon{width:45px;height:45px;background:linear-gradient(135deg,var(--brown),var(--gold));border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-family:'Playfair Display',serif;font-weight:700;font-size:1.2rem}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--brown-dark)}
+.nav-logo-text small{display:block;font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:400;color:var(--gold-dark);letter-spacing:2px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:5px;list-style:none;flex-wrap:wrap}
+.nav-links a{text-decoration:none;color:var(--text-medium);font-size:0.85rem;font-weight:500;padding:8px 12px;border-radius:8px;transition:var(--transition);cursor:pointer}
+.nav-links a:hover,.nav-links a.active{background:var(--beige);color:var(--brown-dark)}
+.nav-links .btn-nav{background:linear-gradient(135deg,var(--brown),var(--brown-dark));color:white !important;padding:10px 18px !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px;z-index:1002;background:none;border:none}
+.hamburger span{width:25px;height:2.5px;background:var(--brown-dark);border-radius:2px;transition:var(--transition)}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--white);z-index:999;padding:100px 30px 30px;overflow-y:auto}
+.mobile-menu.active{display:block;animation:slideIn 0.3s ease}
+@keyframes slideIn{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+.mobile-menu a{display:block;padding:15px 0;text-decoration:none;color:var(--text-dark);font-size:1.1rem;font-weight:500;border-bottom:1px solid var(--beige);cursor:pointer}
+.page{display:none;animation:fadeIn 0.4s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.hero{background:linear-gradient(135deg,var(--brown-dark) 0%,var(--brown) 50%,var(--brown-medium) 100%);padding:80px 20px;position:relative;overflow:hidden;min-height:85vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A96E' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:0.5}
+.hero-container{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-content h1{font-size:3.5rem;color:var(--white);margin-bottom:10px}
+.hero-content h1 span{color:var(--gold)}
+.hero-content .subtitle{font-size:1.3rem;color:var(--gold-light);margin-bottom:20px;font-weight:300}
+.hero-content p{color:rgba(255,255,255,0.85);font-size:1.05rem;margin-bottom:35px;max-width:500px}
+.hero-buttons{display:flex;gap:15px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:0.9rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:var(--transition);letter-spacing:0.5px;font-family:'Inter',sans-serif}
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--brown-dark)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,169,110,0.4)}
+.btn-secondary{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.3)}
+.btn-secondary:hover{background:rgba(255,255,255,0.1);border-color:var(--gold);color:var(--gold)}
+.btn-brown{background:linear-gradient(135deg,var(--brown),var(--brown-dark));color:white}
+.btn-brown:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.btn-outline{background:transparent;color:var(--brown);border:2px solid var(--brown)}
+.btn-outline:hover{background:var(--brown);color:white}
+.btn-success{background:var(--success);color:white}
+.btn-danger{background:var(--danger);color:white}
+.btn-whatsapp{background:#25D366;color:white}
+.hero-image{display:flex;justify-content:center}
+.hero-image svg{width:100%;max-width:500px;height:auto}
+.section{padding:80px 20px}
+.section-alt{background:var(--white)}
+.section-dark{background:linear-gradient(135deg,var(--brown-dark),var(--brown));color:white}
+.container{max-width:1200px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:60px}
+.section-header h2{font-size:2.5rem;color:var(--brown-dark);margin-bottom:15px}
+.section-dark .section-header h2{color:white}
+.section-header p{color:var(--text-light);font-size:1.1rem;max-width:600px;margin:0 auto}
+.section-dark .section-header p{color:rgba(255,255,255,0.7)}
+.gold-line{width:60px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-dark));margin:15px auto;border-radius:2px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:30px}
+.card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:var(--transition)}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
+.card-image{height:220px;position:relative;overflow:hidden}
+.card-image svg{width:100%;height:100%}
+.card-badge{position:absolute;top:15px;right:15px;background:var(--gold);color:var(--brown-dark);padding:5px 12px;border-radius:20px;font-size:0.75rem;font-weight:600}
+.card-content{padding:25px}
+.card-content h3{font-size:1.3rem;color:var(--brown-dark);margin-bottom:10px}
+.card-content p{color:var(--text-light);font-size:0.9rem;margin-bottom:15px}
+.card-meta{display:flex;gap:10px;margin-bottom:15px;flex-wrap:wrap}
+.card-meta span{display:flex;align-items:center;gap:5px;font-size:0.8rem;color:var(--text-medium);background:var(--beige);padding:5px 10px;border-radius:6px}
+.card-price{display:flex;justify-content:space-between;align-items:center;padding-top:15px;border-top:1px solid var(--beige);margin-bottom:15px;flex-wrap:wrap;gap:10px}
+.card-price .price{font-size:1.2rem;font-weight:700;color:var(--brown-dark)}
+.card-price .price small{font-size:0.75rem;font-weight:400;color:var(--text-light)}
+.card-buttons{display:flex;gap:10px;flex-wrap:wrap}
+.card-buttons .btn{padding:10px 18px;font-size:0.8rem;flex:1;justify-content:center}
+.form-container{max-width:700px;margin:0 auto;background:var(--white);padding:40px;border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;margin-bottom:8px;font-weight:500;color:var(--text-dark);font-size:0.9rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:2px solid var(--beige);border-radius:10px;font-size:0.95rem;font-family:'Inter',sans-serif;transition:var(--transition);background:var(--beige-light)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);background:white}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.payment-box{background:linear-gradient(135deg,var(--beige),var(--beige-light));border:2px solid var(--gold);border-radius:var(--radius);padding:25px;margin:20px 0}
+.payment-box h4{color:var(--brown-dark);margin-bottom:15px;font-size:1.1rem}
+.payment-option{background:white;border:2px solid var(--beige);border-radius:10px;padding:15px;margin-bottom:10px;cursor:pointer;transition:var(--transition);display:flex;align-items:center;gap:15px}
+.payment-option:hover{border-color:var(--gold);transform:translateX(5px)}
+.payment-option.selected{border-color:var(--gold);background:rgba(201,169,110,0.1)}
+.payment-option input[type="radio"]{width:20px;height:20px;accent-color:var(--gold-dark)}
+.payment-option .info{flex:1}
+.payment-option .info strong{color:var(--brown-dark);font-size:1rem;display:block}
+.payment-option .info .number{color:var(--gold-dark);font-weight:700;font-size:1.1rem;font-family:monospace;margin-top:3px}
+.payment-option .info small{color:var(--text-light);font-size:0.8rem}
+.payment-summary{background:var(--beige);border-radius:var(--radius);padding:20px;margin:20px 0}
+.payment-summary .line{display:flex;justify-content:space-between;padding:8px 0;font-size:0.9rem}
+.payment-summary .total{border-top:2px solid var(--brown);margin-top:10px;padding-top:10px;font-weight:700;font-size:1.1rem;color:var(--brown-dark)}
+.info-box{background:rgba(201,169,110,0.1);border-left:4px solid var(--gold);padding:15px 20px;border-radius:8px;margin:20px 0;font-size:0.9rem;color:var(--text-medium)}
+.info-box.warning{background:rgba(255,152,0,0.1);border-color:var(--warning)}
+.info-box.success{background:rgba(76,175,80,0.1);border-color:var(--success)}
+.admin-login{max-width:500px;margin:40px auto;background:var(--white);padding:40px;border-radius:var(--radius-lg);box-shadow:var(--shadow);text-align:center}
+.admin-header{background:linear-gradient(135deg,var(--brown-dark),var(--brown));color:white;padding:40px 20px}
+.admin-header h2{font-size:2rem;margin-bottom:10px}
+.admin-container{max-width:1400px;margin:0 auto;padding:40px 20px}
+.admin-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-bottom:40px}
+.admin-stat{background:var(--white);padding:25px;border-radius:var(--radius);box-shadow:var(--shadow);border-left:4px solid var(--gold)}
+.admin-stat h4{font-size:0.85rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-family:'Inter',sans-serif}
+.admin-stat .value{font-size:2rem;font-weight:700;color:var(--brown-dark)}
+.admin-table-container{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;margin-bottom:30px}
+.admin-table{width:100%;border-collapse:collapse}
+.admin-table th{background:var(--brown-dark);color:white;padding:15px;text-align:left;font-size:0.85rem;font-weight:600}
+.admin-table td{padding:15px;border-bottom:1px solid var(--beige);font-size:0.85rem;vertical-align:top}
+.admin-table tr:hover td{background:var(--beige-light)}
+.status-badge{display:inline-block;padding:4px 10px;border-radius:12px;font-size:0.75rem;font-weight:600}
+.status-pending{background:#FFF3E0;color:#E65100}
+.status-active{background:#E8F5E9;color:#2E7D32}
+.status-rejected{background:#FFEBEE;color:#C62828}
+.codes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:40px}
+.code-card{background:var(--white);padding:25px;border-radius:var(--radius);box-shadow:var(--shadow);border-top:4px solid var(--gold)}
+.code-card h4{color:var(--brown-dark);margin-bottom:10px;font-size:1.1rem}
+.code-card .code-value{background:linear-gradient(135deg,var(--brown-dark),var(--brown));color:var(--gold);padding:12px;border-radius:8px;font-family:monospace;font-weight:700;font-size:1.1rem;text-align:center;margin:10px 0;letter-spacing:2px;cursor:pointer}
+.code-card .code-value:hover{background:var(--brown)}
+.code-card .actions{display:flex;gap:10px;margin-top:15px}
+.code-card .actions .btn{flex:1;padding:10px;font-size:0.8rem;justify-content:center}
+.dashboard-header{background:linear-gradient(135deg,var(--brown-dark),var(--brown));padding:40px 20px;color:white}
+.dashboard-header h2{font-size:2rem;margin-bottom:5px}
+.dashboard-header p{color:rgba(255,255,255,0.7)}
+.dashboard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;margin:-30px auto 40px;max-width:1200px;padding:0 20px;position:relative;z-index:1}
+.dash-card{background:var(--white);padding:25px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.dash-card h4{font-size:0.85rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-family:'Inter',sans-serif}
+.dash-card .value{font-size:1.2rem;font-weight:700;color:var(--brown-dark);word-break:break-word}
+.progress-section{max-width:800px;margin:0 auto;padding:0 20px 60px}
+.progress-bar-container{background:var(--beige);border-radius:10px;height:20px;overflow:hidden;margin:15px 0 30px}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-dark));border-radius:10px;transition:width 1s ease}
+.module-list{list-style:none}
+.module-list li{display:flex;align-items:center;gap:12px;padding:15px;background:var(--white);border-radius:10px;margin-bottom:10px;box-shadow:var(--shadow);cursor:pointer;transition:var(--transition)}
+.module-list li:hover{transform:translateX(5px)}
+.module-list li .check{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;flex-shrink:0}
+.module-list li .check.done{background:var(--gold);color:var(--brown-dark)}
+.module-list li .check.pending{border:2px solid var(--beige);color:var(--text-light)}
+.footer{background:var(--brown-dark);color:rgba(255,255,255,0.8);padding:60px 20px 30px}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer h4{color:var(--gold);font-size:1rem;margin-bottom:20px}
+.footer p{font-size:0.9rem;line-height:1.8}
+.footer a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.9rem;display:block;padding:4px 0;transition:var(--transition);cursor:pointer}
+.footer a:hover{color:var(--gold)}
+.footer-bottom{max-width:1200px;margin:0 auto;padding-top:30px;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:0.85rem;color:rgba(255,255,255,0.5)}
+.whatsapp-float{position:fixed;bottom:25px;right:25px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1.8rem;box-shadow:0 4px 15px rgba(37,211,102,0.4);z-index:999;cursor:pointer;transition:var(--transition);text-decoration:none}
+.whatsapp-float:hover{transform:scale(1.1)}
+.notification{position:fixed;top:20px;right:20px;background:var(--white);padding:20px 25px;border-radius:var(--radius);box-shadow:var(--shadow-hover);z-index:2000;transform:translateX(120%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);max-width:400px;border-left:4px solid var(--gold)}
+.notification.show{transform:translateX(0)}
+.notification.success{border-left-color:var(--success)}
+.notification.error{border-left-color:var(--danger)}
+.notification h4{color:var(--brown-dark);font-size:0.95rem;margin-bottom:5px}
+.notification p{color:var(--text-light);font-size:0.85rem;white-space:pre-line}
+.cta-section{background:linear-gradient(135deg,var(--brown),var(--brown-dark));padding:60px 20px;text-align:center;color:white}
+.cta-section h2{font-size:2.2rem;margin-bottom:15px}
+.cta-section p{color:rgba(255,255,255,0.8);margin-bottom:30px;max-width:600px;margin-left:auto;margin-right:auto}
+.cta-buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px}
+.feature-card{text-align:center;padding:40px 25px;background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow);transition:var(--transition)}
+.feature-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
+.feature-card .icon{width:70px;height:70px;background:linear-gradient(135deg,var(--beige),var(--beige-light));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem}
+.feature-card h4{font-size:1.1rem;color:var(--brown-dark);margin-bottom:10px}
+.feature-card p{color:var(--text-light);font-size:0.9rem}
+.teachers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px}
+.teacher-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);text-align:center;transition:var(--transition)}
+.teacher-card:hover{transform:translateY(-5px)}
+.teacher-avatar{width:100px;height:100px;background:linear-gradient(135deg,var(--brown),var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:30px auto 15px;font-size:2.5rem;color:white}
+.teacher-card h4{font-size:1.2rem;color:var(--brown-dark);margin-bottom:5px;padding:0 20px}
+.teacher-card .specialty{color:var(--gold-dark);font-size:0.85rem;font-weight:600;margin-bottom:10px}
+.teacher-card p{color:var(--text-light);font-size:0.85rem;padding:0 20px 25px}
+.schedule-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+.schedule-table th{background:linear-gradient(135deg,var(--brown-dark),var(--brown));color:white;padding:18px 20px;text-align:left;font-size:0.9rem;font-weight:600}
+.schedule-table td{padding:15px 20px;border-bottom:1px solid var(--beige);font-size:0.9rem;color:var(--text-medium)}
+.schedule-table tr:last-child td{border-bottom:none}
+.schedule-table tr:hover td{background:var(--beige-light)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:30px}
+.stat-card{text-align:center;padding:35px 20px;background:rgba(255,255,255,0.1);border-radius:var(--radius-lg);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1)}
+.stat-card .number{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--gold);margin-bottom:5px}
+.stat-card .label{color:rgba(255,255,255,0.8);font-size:0.9rem}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:30px}
+.testimonial-card{background:var(--white);padding:30px;border-radius:var(--radius-lg);box-shadow:var(--shadow);position:relative}
+.testimonial-card::before{content:'"';font-family:'Playfair Display',serif;font-size:4rem;color:var(--gold);position:absolute;top:10px;left:20px;opacity:0.3}
+.testimonial-card p{color:var(--text-medium);font-style:italic;margin-bottom:20px;padding-top:20px}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-author .avatar{width:45px;height:45px;background:linear-gradient(135deg,var(--brown),var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:600}
+.testimonial-author .name{font-weight:600;color:var(--brown-dark);font-size:0.9rem}
+.testimonial-author .role{font-size:0.8rem;color:var(--text-light)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-info{display:flex;flex-direction:column;gap:20px}
+.contact-item{display:flex;align-items:flex-start;gap:15px;padding:20px;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow)}
+.contact-item .icon{width:45px;height:45px;background:linear-gradient(135deg,var(--beige),var(--beige-light));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contact-item h4{font-size:0.95rem;color:var(--brown-dark);margin-bottom:3px}
+.contact-item p{font-size:0.85rem;color:var(--text-light)}
+.formation-hero{background:linear-gradient(135deg,var(--brown-dark),var(--brown));padding:60px 20px;color:white}
+.formation-hero .container{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.formation-hero h1{font-size:2.5rem;margin-bottom:15px}
+.formation-hero p{color:rgba(255,255,255,0.8);margin-bottom:20px}
+.formation-details{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:15px;margin:20px 0}
+.formation-detail-item{background:rgba(255,255,255,0.1);padding:15px;border-radius:10px;text-align:center}
+.formation-detail-item .label{font-size:0.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:1px}
+.formation-detail-item .value{font-size:1rem;font-weight:600;margin-top:5px}
+.formation-body{padding:60px 20px}
+.formation-body .container{max-width:900px}
+.formation-body h3{font-size:1.5rem;color:var(--brown-dark);margin:30px 0 15px}
+.formation-body ul{padding-left:20px;color:var(--text-medium)}
+.formation-body ul li{padding:5px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-image svg{width:100%;border-radius:var(--radius-lg)}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;margin-top:40px}
+.value-item{text-align:center;padding:25px 15px;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);transition:var(--transition)}
+.value-item:hover{transform:translateY(-3px)}
+.value-item .icon{font-size:2rem;margin-bottom:10px}
+.value-item h4{font-size:1rem;color:var(--brown-dark)}
+.page-loader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--brown-dark);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.5s ease}
+.page-loader.hidden{opacity:0;pointer-events:none}
+.loader-content{text-align:center;color:white}
+.loader-content h2{font-size:2rem;margin-bottom:10px}
+.loader-content p{color:var(--gold)}
+.loader-bar{width:200px;height:3px;background:rgba(255,255,255,0.1);margin:20px auto;border-radius:2px;overflow:hidden}
+.loader-bar::after{content:'';display:block;width:50%;height:100%;background:var(--gold);animation:loading 1.5s ease infinite}
+@keyframes loading{0%{transform:translateX(-100%)}100%{transform:translateX(300%)}}
+.seminar-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px}
+.seminar-card{background:var(--white);border-radius:var(--radius-lg);padding:30px;box-shadow:var(--shadow);border-left:4px solid var(--gold)}
+.seminar-card h4{color:var(--brown-dark);font-size:1.2rem;margin-bottom:10px}
+.seminar-card .info{color:var(--text-light);font-size:0.9rem;margin-bottom:5px}
+.seminar-card .info strong{color:var(--text-dark)}
+.tabs{display:flex;gap:10px;margin-bottom:30px;flex-wrap:wrap;border-bottom:2px solid var(--beige);padding-bottom:10px}
+.tab{padding:10px 20px;background:var(--beige);border:none;border-radius:8px 8px 0 0;cursor:pointer;font-weight:500;color:var(--text-medium);transition:var(--transition);font-family:'Inter',sans-serif;font-size:0.9rem}
+.tab.active{background:var(--brown-dark);color:white}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.animate-on-scroll{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.animate-on-scroll.visible{opacity:1;transform:translateY(0)}
+.admin-link-discret{position:fixed;bottom:5px;left:5px;font-size:0.7rem;color:rgba(0,0,0,0.15);text-decoration:none;z-index:100;cursor:pointer}
+@media (max-width:1024px){.hero-container{grid-template-columns:1fr;text-align:center}.hero-content p{margin:0 auto 35px}.hero-buttons{justify-content:center}.hero-image{display:none}.about-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.formation-hero .container{grid-template-columns:1fr}}
+@media (max-width:768px){.nav-links{display:none}.hamburger{display:flex}.hero{padding:50px 20px;min-height:70vh}.hero-content h1{font-size:2.2rem}.hero-content .subtitle{font-size:1.1rem}.section{padding:50px 15px}.section-header h2{font-size:1.8rem}.cards-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.form-container{padding:25px}.footer-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}.testimonials-grid{grid-template-columns:1fr}.dashboard-grid{grid-template-columns:1fr 1fr}.schedule-table{font-size:0.8rem}.schedule-table th,.schedule-table td{padding:10px 12px}.admin-table{font-size:0.75rem}.admin-table th,.admin-table td{padding:10px 8px}}
+@media (max-width:480px){.hero-content h1{font-size:1.8rem}.hero-buttons{flex-direction:column;align-items:center}.btn{width:100%;justify-content:center}.dashboard-grid{grid-template-columns:1fr}.card-buttons{flex-direction:column}.stat-card .number{font-size:2.2rem}.admin-container{padding:20px 10px}}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+        <h2>NOVA INSTITUTE</h2>
+        <p>Formation Professionnelle</p>
+        <div class="loader-bar"></div>
+    </div>
+</div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+    <div class="marquee">
+        <span>🎓 NOVA INSTITUTE — Développez vos compétences — Formations pratiques — Inscriptions ouvertes — Séminaires professionnels — WhatsApp : 33552907</span>
+        <span>🎓 NOVA INSTITUTE — Développez vos compétences — Formations pratiques — Inscriptions ouvertes — Séminaires professionnels — WhatsApp : 33552907</span>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a class="nav-logo" data-nav="home">
+            <div class="nav-logo-icon">N</div>
+            <div class="nav-logo-text">NOVA INSTITUTE<small>Formation Professionnelle</small></div>
+        </a>
+        <ul class="nav-links">
+            <li><a data-nav="home">🏠 Accueil</a></li>
+            <li><a data-nav="about">🎯 Mission</a></li>
+            <li><a data-nav="formations">📚 Formations</a></li>
+            <li><a data-nav="teachers">👨‍🏫 Professeurs</a></li>
+            <li><a data-nav="schedule">🕐 Horaires</a></li>
+            <li><a data-nav="contact">📞 Contact</a></li>
+            <li><a data-nav="inscription" class="btn-nav">📝 Inscription</a></li>
+            <li><a data-nav="login" class="btn-nav">🔐 Connexion</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a data-nav="home">🏠 Accueil</a>
+    <a data-nav="about">🎯 Mission & Vision</a>
+    <a data-nav="formations">📚 Formations</a>
+    <a data-nav="teachers">👨‍🏫 Professeurs</a>
+    <a data-nav="schedule">🕐 Horaires</a>
+    <a data-nav="contact">📞 Contact</a>
+    <a data-nav="inscription">📝 Inscription</a>
+    <a data-nav="login">🔐 Connexion Étudiant</a>
+</div>
+
+<!-- PAGE ACCUEIL -->
+<div class="page active" id="page-home">
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>NOVA <span>INSTITUTE</span></h1>
+                <p class="subtitle">Développez vos compétences. Apprenez un métier. Construisez votre avenir.</p>
+                <p>NOVA INSTITUTE vous accompagne à travers des formations pratiques et professionnelles conçues pour développer vos compétences et vous permettre de transformer vos connaissances en opportunités.</p>
+                <div class="hero-buttons">
+                    <a class="btn btn-primary" data-nav="formations">📚 VOIR LES FORMATIONS</a>
+                    <a class="btn btn-secondary" data-nav="inscription">📝 S'INSCRIRE</a>
+                    <a class="btn btn-secondary" data-nav="login">🔐 CONNEXION</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C9A96E;stop-opacity:0.3"/><stop offset="100%" style="stop-color:#5D4037;stop-opacity:0.2"/></linearGradient></defs>
+                    <rect width="500" height="400" rx="20" fill="url(#heroGrad)"/>
+                    <circle cx="250" cy="150" r="60" fill="rgba(201,169,110,0.3)" stroke="rgba(201,169,110,0.5)" stroke-width="2"/>
+                    <text x="250" y="170" text-anchor="middle" fill="white" font-size="50">🎓</text>
+                    <circle cx="120" cy="320" r="25" fill="rgba(201,169,110,0.2)"/>
+                    <circle cx="250" cy="330" r="20" fill="rgba(201,169,110,0.15)"/>
+                    <circle cx="380" cy="315" r="22" fill="rgba(201,169,110,0.2)"/>
+                    <text x="120" y="328" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="22">🧪</text>
+                    <text x="250" y="338" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="20">🎈</text>
+                    <text x="380" y="323" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="22">💐</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="about-grid animate-on-scroll">
+                <div class="about-image">
+                    <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="500" height="350" rx="20" fill="#F5F0EB"/>
+                        <rect x="50" y="50" width="400" height="200" rx="15" fill="#5D4037" opacity="0.1"/>
+                        <rect x="80" y="80" width="150" height="120" rx="10" fill="#C9A96E" opacity="0.3"/>
+                        <text x="250" y="300" text-anchor="middle" fill="#5D4037" font-family="serif" font-size="18" font-weight="600">NOVA INSTITUTE</text>
+                        <text x="250" y="325" text-anchor="middle" fill="#8D6E63" font-size="12">Centre de Formation Professionnelle</text>
+                    </svg>
+                </div>
+                <div>
+                    <h3 style="color:var(--brown-dark);font-size:1.8rem;margin-bottom:20px;">Qui sommes-nous ?</h3>
+                    <p style="color:var(--text-medium);margin-bottom:15px;">NOVA INSTITUTE est une école de formation professionnelle orientée vers la pratique et le développement des compétences. Nous proposons des formations concrètes qui permettent à chaque participant d'acquérir un métier.</p>
+                    <p style="color:var(--text-medium);margin-bottom:20px;">Notre approche combine théorie et pratique, avec des professeurs expérimentés qui accompagnent chaque étudiant dans son parcours d'apprentissage.</p>
+                    <a class="btn btn-brown" data-nav="about" style="margin-top:15px;">EN SAVOIR PLUS →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Nos Formations</h2>
+                <div class="gold-line"></div>
+                <p>Des formations pratiques pour développer vos compétences et construire votre avenir professionnel.</p>
+            </div>
+            <div class="cards-grid" id="homeFormations"></div>
+            <div style="text-align:center;margin-top:40px;">
+                <a class="btn btn-brown" data-nav="formations">VOIR TOUTES LES FORMATIONS →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Pourquoi choisir NOVA INSTITUTE ?</h2>
+                <div class="gold-line"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll"><div class="icon">🎯</div><h4>Formation Pratique</h4><p>Apprenez en pratiquant directement avec des compétences immédiatement applicables.</p></div>
+                <div class="feature-card animate-on-scroll"><div class="icon">👨‍🏫</div><h4>Professeurs Expérimentés</h4><p>Nos formateurs sont des professionnels actifs avec plusieurs années d'expérience.</p></div>
+                <div class="feature-card animate-on-scroll"><div class="icon">💰</div><h4>Prix Accessibles</h4><p>Des formations de qualité à des prix accessibles pour permettre à tous de se former.</p></div>
+                <div class="feature-card animate-on-scroll"><div class="icon">📜</div><h4>Certification</h4><p>Obtenez une attestation de formation reconnue à la fin de votre parcours.</p></div>
+                <div class="feature-card animate-on-scroll"><div class="icon">🤝</div><h4>Accompagnement</h4><p>Un suivi personnalisé tout au long de votre formation.</p></div>
+                <div class="feature-card animate-on-scroll"><div class="icon">🚀</div><h4>Opportunités</h4><p>Développez votre propre activité ou intégrez rapidement le marché du travail.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Nos Professeurs</h2>
+                <div class="gold-line"></div>
+            </div>
+            <div class="teachers-grid" id="homeTeachers"></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Horaires des Formations</h2>
+                <div class="gold-line"></div>
+            </div>
+            <div style="overflow-x:auto;" class="animate-on-scroll">
+                <table class="schedule-table">
+                    <thead><tr><th>Formation</th><th>Durée</th><th>Horaire</th><th>Jours</th></tr></thead>
+                    <tbody id="schedulePreview"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Témoignages</h2>
+                <div class="gold-line"></div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <p>Grâce à NOVA INSTITUTE, j'ai appris la chimie industrielle et j'ai pu lancer ma propre production de savons.</p>
+                    <div class="testimonial-author"><div class="avatar">MJ</div><div><div class="name">Marie J.</div><div class="role">Chimie Industrielle</div></div></div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <p>La formation en décoration événementielle m'a permis de développer mon activité. Les professeurs sont excellents.</p>
+                    <div class="testimonial-author"><div class="avatar">KP</div><div><div class="name">Ketty P.</div><div class="role">Décoration</div></div></div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <p>J'ai suivi la formation en confection de perruques et maintenant je travaille à mon compte. Merci NOVA INSTITUTE !</p>
+                    <div class="testimonial-author"><div class="avatar">SB</div><div><div class="name">Sandra B.</div><div class="role">Perruques</div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Nos Statistiques</h2>
+                <div class="gold-line"></div>
+            </div>
+            <div class="stats-grid" id="statsGrid"></div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Prêt à développer vos compétences ?</h2>
+            <p>Inscrivez-vous dès maintenant et commencez votre parcours de formation professionnelle avec NOVA INSTITUTE.</p>
+            <div class="cta-buttons">
+                <a class="btn btn-primary" data-nav="inscription">📝 S'INSCRIRE MAINTENANT</a>
+                <a href="https://wa.me/33552907" target="_blank" class="btn btn-secondary">💬 CONTACTER SUR WHATSAPP</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- PAGE ABOUT -->
+<div class="page" id="page-about">
+    <section class="section">
+        <div class="container">
+            <div class="section-header"><h2>À Propos de NOVA INSTITUTE</h2><div class="gold-line"></div></div>
+            <div class="about-grid">
+                <div>
+                    <h3 style="color:var(--brown-dark);font-size:1.5rem;margin-bottom:15px;">Qui sommes-nous ?</h3>
+                    <p style="color:var(--text-medium);margin-bottom:20px;">NOVA INSTITUTE est une école de formation professionnelle dédiée au développement des compétences pratiques.</p>
+                    <h3 style="color:var(--brown-dark);font-size:1.5rem;margin:30px 0 15px;">Notre Mission</h3>
+                    <p style="color:var(--text-medium);margin-bottom:20px;">Offrir des formations pratiques, accessibles et professionnelles permettant aux participants d'acquérir des compétences utiles dans leur vie professionnelle et entrepreneuriale.</p>
+                    <h3 style="color:var(--brown-dark);font-size:1.5rem;margin:30px 0 15px;">Notre Vision</h3>
+                    <p style="color:var(--text-medium);">Devenir une référence dans la formation professionnelle en proposant des apprentissages pratiques, modernes et adaptés aux besoins du marché.</p>
+                </div>
+                <div>
+                    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="400" rx="20" fill="#F5F0EB"/>
+                        <circle cx="200" cy="140" r="50" fill="#C9A96E" opacity="0.3"/>
+                        <text x="200" y="155" text-anchor="middle" font-size="40">🏫</text>
+                        <text x="200" y="340" text-anchor="middle" fill="#5D4037" font-family="serif" font-size="16" font-weight="600">NOVA INSTITUTE</text>
+                        <text x="200" y="365" text-anchor="middle" fill="#8D6E63" font-size="11">Excellence • Professionnalisme • Innovation</text>
+                    </svg>
+                </div>
+            </div>
+            <div class="section-header" style="margin-top:60px;"><h2>Nos Valeurs</h2><div class="gold-line"></div></div>
+            <div class="values-grid">
+                <div class="value-item"><div class="icon">🎯</div><h4>Professionnalisme</h4></div>
+                <div class="value-item"><div class="icon">📏</div><h4>Discipline</h4></div>
+                <div class="value-item"><div class="icon">⭐</div><h4>Excellence</h4></div>
+                <div class="value-item"><div class="icon">🔧</div><h4>Pratique</h4></div>
+                <div class="value-item"><div class="icon">💡</div><h4>Innovation</h4></div>
+                <div class="value-item"><div class="icon">🤝</div><h4>Accompagnement</h4></div>
+                <div class="value-item"><div class="icon">🙏</div><h4>Respect</h4></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- PAGE FORMATIONS -->
+<div class="page" id="page-formations">
+    <section class="section">
+        <div class="container">
+            <div class="section-header"><h2>Catalogue des Formations</h2><div class="gold-line"></div><p>Découvrez toutes nos formations professionnelles.</p></div>
+            <div class="cards-grid" id="allFormations"></div>
+        </div>
+    </section>
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header"><h2>Séminaires Professionnels</h2><div class="gold-line"></div></div>
+            <div class="seminar-cards" id="seminarCards"></div>
+        </div>
+    </section>
+</div>
+
+<!-- PAGE FORMATION DETAIL -->
+<div class="page" id="page-formation-detail">
+    <div id="formationDetailContent"></div>
+</div>
+
+<!-- PAGE TEACHERS -->
+<div class="page" id="page-teachers">
+    <section class="section">
+        <div class="container">
+            <div class="section-header"><h2>Nos Professeurs</h2><div class="gold-line"></div></div>
+            <div class="teachers-grid" id="allTeachers"></div>
+        </div>
+    </section>
+</div>
+
+<!-- PAGE SCHEDULE -->
+<div class="page" id="page-schedule">
+    <section class="section">
+        <div class="container">
+            <div class="section-header"><h2>Horaires des Formations</h2><div class="gold-line"></div></div>
+            <div style="overflow-x:auto;">
+                <table class="schedule-table">
+                    <thead><tr><th>Formation</th><th>Durée</th><th>Horaire</th><th>Jours</th><th>Type</th></tr></thead>
+                    <tbody id="fullSchedule"></tbody>
+                </table>
+            </div>
+            <div style="margin-top:40px;padding:25px;background:var(--beige);border-radius:var(--radius);border-left:4px solid var(--gold);">
+                <h4 style="color:var(--brown-dark);margin-bottom:10px;">📌 Informations importantes</h4>
+                <ul style="color:var(--text-medium);padding-left:20px;font-size:0.9rem;">
+                    <li>Les séminaires de 2 jours se déroulent de 9h00 à 13h00.</li>
+                    <li>La confection de perruques se déroule sur 4 jours (2 samedis + 2 dimanches), de 9h00 à 13h00.</li>
+                    <li>La décoration événementielle et la sandalerie se déroulent sur 2 mois, de 10h00 à 15h00.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- PAGE INSCRIPTION -->
+<div class="page" id="page-inscription">
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Inscription à une Formation</h2>
+                <div class="gold-line"></div>
+                <p>Remplissez le formulaire ci-dessous. Après votre paiement, envoyez les informations sur WhatsApp pour validation.</p>
+            </div>
+            <div class="form-container">
+                <form id="inscriptionForm">
+                    <h3 style="color:var(--brown-dark);margin-bottom:20px;font-size:1.3rem;">📋 Informations personnelles</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Nom complet *</label><input type="text" id="insc_nom" required placeholder="Votre nom complet"></div>
+                        <div class="form-group"><label>Email *</label><input type="email" id="insc_email" required placeholder="votre@email.com"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Téléphone *</label><input type="tel" id="insc_tel" required placeholder="Votre numéro"></div>
+                        <div class="form-group"><label>Adresse</label><input type="text" id="insc_adresse" placeholder="Votre adresse"></div>
+                    </div>
+
+                    <h3 style="color:var(--brown-dark);margin:30px 0 20px;font-size:1.3rem;">📚 Formation choisie</h3>
+                    <div class="form-group">
+                        <label>Formation *</label>
+                        <select id="insc_formation" required><option value="">-- Choisir une formation --</option></select>
+                    </div>
+
+                    <div class="payment-summary" id="paymentSummary" style="display:none;">
+                        <div class="line"><span>Frais d'inscription :</span><span id="sumInsc">-</span></div>
+                        <div class="line"><span>Frais de participation :</span><span id="sumFrais">-</span></div>
+                        <div class="line total"><span>Total à payer :</span><span id="sumTotal">-</span></div>
+                    </div>
+
+                    <h3 style="color:var(--brown-dark);margin:30px 0 20px;font-size:1.3rem;">💳 Moyens de paiement</h3>
+                    <div class="payment-box">
+                        <h4>Choisissez votre moyen de paiement :</h4>
+                        <label class="payment-option">
+                            <input type="radio" name="payment_method" value="MonCash" required>
+                            <div class="info">
+                                <strong>📱 MonCash</strong>
+                                <div class="number">44699777</div>
+                                <small>Envoyez le montant au numéro ci-dessus via MonCash</small>
+                            </div>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment_method" value="NatCash">
+                            <div class="info">
+                                <strong>📱 NatCash</strong>
+                                <div class="number">58046408</div>
+                                <small>Envoyez le montant au numéro ci-dessus via NatCash</small>
+                            </div>
+                        </label>
+                    </div>
+
+                    <h3 style="color:var(--brown-dark);margin:30px 0 20px;font-size:1.3rem;">🧾 Informations de paiement</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>Numéro utilisé pour le paiement *</label><input type="tel" id="insc_num_pay" required placeholder="Votre numéro"></div>
+                        <div class="form-group"><label>Montant payé (HTG) *</label><input type="number" id="insc_montant" required placeholder="Montant total"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Référence de transaction *</label><input type="text" id="insc_ref" required placeholder="Numéro de référence"></div>
+                        <div class="form-group"><label>Date du paiement *</label><input type="date" id="insc_date" required></div>
+                    </div>
+
+                    <div class="info-box warning">
+                        ⚠️ <strong>Important :</strong> Après avoir effectué votre paiement, cliquez sur le bouton ci-dessous. Vos informations seront envoyées automatiquement sur WhatsApp pour validation. Vous recevrez ensuite votre <strong>code d'accès</strong> par WhatsApp.
+                    </div>
+
+                    <button type="submit" class="btn btn-whatsapp" style="width:100%;justify-content:center;padding:16px;font-size:1rem;">
+                        💬 VALIDER ET ENVOYER SUR WHATSAPP
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- PAGE LOGIN -->
+<div class="page" id="page-login">
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Espace Étudiant</h2>
+                <div class="gold-line"></div>
+                <p>Connectez-vous avec vos identifiants et votre code d'accès.</p>
+            </div>
+            <div class="form-container">
+                <div class="tabs">
+                    <button type="button" class="tab active" data-tab="login">🔐 Se connecter</button>
+                    <button type="button" class="tab" data-tab="request">📩 Demander mon code</button>
+                </div>
+
+                <div class="tab-content active" id="tab-login">
+                    <form id="loginForm">
+                        <div class="form-group"><label>Email ou identifiant étudiant *</label><input type="text" id="login_email" required placeholder="Votre email ou numéro étudiant"></div>
+                        <div class="form-group"><label>Mot de passe *</label><input type="password" id="login_password" required placeholder="Votre mot de passe"></div>
+                        <div class="form-group">
+                            <label>Code d'accès à la formation *</label>
+                            <input type="text" id="login_code" required placeholder="Code fourni par NOVA INSTITUTE" style="font-family:monospace;letter-spacing:2px;text-transform:uppercase;">
+                            <small style="color:var(--text-light);font-size:0.8rem;margin-top:5px;display:block;">
+                                💡 Vous n'avez pas votre code ? <a style="color:var(--gold-dark);cursor:pointer;" id="gotoRequest">Cliquez ici pour le demander</a>
+                            </small>
+                        </div>
+                        <button type="submit" class="btn btn-brown" style="width:100%;justify-content:center;padding:16px;">🔐 SE CONNECTER</button>
+                        <p style="text-align:center;margin-top:15px;font-size:0.85rem;color:var(--text-light);">
+                            Pas encore inscrit ? <a style="color:var(--brown);cursor:pointer;" data-nav="inscription">S'inscrire</a>
+                        </p>
+                    </form>
+                </div>
+
+                <div class="tab-content" id="tab-request">
+                    <div class="info-box">
+                        📩 <strong>Comment obtenir votre code d'accès ?</strong><br>
+                        Remplissez le formulaire ci-dessous avec les mêmes informations que lors de votre inscription. Un message WhatsApp sera automatiquement envoyé à NOVA INSTITUTE.
+                    </div>
+                    <form id="requestCodeForm">
+                        <div class="form-group"><label>Nom complet (comme inscrit) *</label><input type="text" id="req_nom" required placeholder="Votre nom complet"></div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Email (comme inscrit) *</label><input type="email" id="req_email" required placeholder="Votre email"></div>
+                            <div class="form-group"><label>Téléphone (comme inscrit) *</label><input type="tel" id="req_tel" required placeholder="Votre numéro"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Formation suivie *</label>
+                            <select id="req_formation" required><option value="">-- Choisir --</option></select>
+                        </div>
+                        <div class="form-group"><label>Référence de transaction *</label><input type="text" id="req_ref" required placeholder="Votre référence de paiement"></div>
+                        <div class="form-group">
+                            <label>Moyen de paiement utilisé *</label>
+                            <select id="req_payment" required>
+                                <option value="">-- Choisir --</option>
+                                <option value="MonCash">MonCash (44699777)</option>
+                                <option value="NatCash">NatCash (58046408)</option>
+                            </select>
+                        </div>
+                        <div class="info-box success">✅ Après envoi, NOVA INSTITUTE vérifiera vos informations et vous enverra votre code d'accès.</div>
+                        <button type="submit" class="btn btn-whatsapp" style="width:100%;justify-content:center;padding:16px;">💬 DEMANDER MON CODE D'ACCÈS</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- PAGE DASHBOARD -->
+<div class="page" id="page-dashboard">
+    <div class="dashboard-header">
+        <div class="container">
+            <h2>Bienvenue, <span id="dashName">Étudiant</span></h2>
+            <p>Voici votre espace de formation personnel</p>
+        </div>
+    </div>
+    <div class="dashboard-grid" id="dashCards"></div>
+    <div class="progress-section">
+        <h3 style="color:var(--brown-dark);margin-bottom:5px;">📊 Progression du parcours</h3>
+        <p style="color:var(--text-light);font-size:0.9rem;" id="dashProgressText">0% complété</p>
+        <div class="progress-bar-container"><div class="progress-bar" id="dashProgressBar" style="width:0%"></div></div>
+        <h4 style="color:var(--brown-dark);margin-bottom:15px;">Modules de formation</h4>
+        <ul class="module-list" id="moduleList"></ul>
+        <div style="margin-top:30px;text-align:center;">
+            <button type="button" class="btn btn-brown" id="logoutBtn">🚪 Se déconnecter</button>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE CONTACT -->
+<div class="page" id="page-contact">
+    <section class="section">
+        <div class="container">
+            <div class="section-header"><h2>Contactez-nous</h2><div class="gold-line"></div></div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item"><div class="icon">📍</div><div><h4>Adresse</h4><p>Cité Militaire / École Foi d'Abraham</p></div></div>
+                    <div class="contact-item"><div class="icon">📞</div><div><h4>Téléphone</h4><p>58046408 / 44699777</p></div></div>
+                    <div class="contact-item"><div class="icon">💬</div><div><h4>WhatsApp</h4><p>33552907</p></div></div>
+                    <div class="contact-item"><div class="icon">📧</div><div><h4>Email</h4><p>institutenova61@gmail.com</p></div></div>
+                    <div class="contact-item"><div class="icon">💳</div><div><h4>Moyens de paiement</h4><p>MonCash : 44699777<br>NatCash : 58046408</p></div></div>
+                </div>
+                <div>
+                    <div style="display:flex;flex-direction:column;gap:15px;">
+                        <a href="https://wa.me/33552907" target="_blank" class="btn btn-brown" style="justify-content:center;">💬 CONTACTER SUR WHATSAPP</a>
+                        <a href="tel:58046408" class="btn btn-outline" style="justify-content:center;">📞 APPELER</a>
+                        <a href="mailto:institutenova61@gmail.com" class="btn btn-outline" style="justify-content:center;">📧 ENVOYER UN EMAIL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- PAGE ADMIN -->
+<div class="page" id="page-admin">
+    <div id="adminContent"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <h4>NOVA INSTITUTE</h4>
+            <p>Développez vos compétences. Construisez votre avenir. Formations pratiques et professionnelles pour tous.</p>
+        </div>
+        <div>
+            <h4>Navigation</h4>
+            <a data-nav="home">Accueil</a>
+            <a data-nav="about">À propos</a>
+            <a data-nav="formations">Formations</a>
+            <a data-nav="teachers">Professeurs</a>
+            <a data-nav="schedule">Horaires</a>
+        </div>
+        <div>
+            <h4>Formations</h4>
+            <a data-formation="0">Chimie Industrielle</a>
+            <a data-formation="1">Décoration</a>
+            <a data-formation="2">Sandalerie</a>
+            <a data-formation="3">Impression</a>
+            <a data-formation="4">Bouquets</a>
+            <a data-formation="5">Perruques</a>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <p>📞 58046408 / 44699777</p>
+            <p>💬 WhatsApp : 33552907</p>
+            <p>📧 institutenova61@gmail.com</p>
+            <p>📍 Cité Militaire</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 NOVA INSTITUTE — Tous droits réservés.</p>
+    </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/33552907" target="_blank" class="whatsapp-float" aria-label="WhatsApp">💬</a>
+
+<!-- ADMIN LINK DISCRET -->
+<a class="admin-link-discret" data-nav="admin">Administration</a>
+
+<!-- NOTIFICATION -->
+<div class="notification" id="notification">
+    <h4 id="notifTitle">Notification</h4>
+    <p id="notifText">Message</p>
+</div>
+
+<script>
+/* =====================================================
+   CONFIGURATION CENTRALE - MODIFIEZ ICI
+   ===================================================== */
+var CONFIG = {
+    institute: {
+        name: "NOVA INSTITUTE",
+        address: "Cité Militaire / École Foi d'Abraham",
+        phone: ["58046408", "44699777"],
+        whatsapp: "33552907",
+        email: "institutenova61@gmail.com",
+        paymentMonCash: "44699777",
+        paymentNatCash: "58046408"
+    },
+    adminPassword: "nova2026admin",
+    accessCodes: {
+        "chimie": "CHIMIE2026",
+        "decoration": "DECO2026",
+        "sandalerie": "SANDALERIE2026",
+        "impression": "IMPRESSION2026",
+        "bouquet": "BOUQUET2026",
+        "perruque": "PERRUQUE2026"
+    },
+    stats: [
+        { number: 150, label: "Étudiants inscrits", suffix: "+" },
+        { number: 6, label: "Formations disponibles", suffix: "" },
+        { number: 8, label: "Professeurs", suffix: "" },
+        { number: 25, label: "Séminaires organisés", suffix: "+" },
+        { number: 95, label: "Taux de satisfaction", suffix: "%" }
+    ],
+    formations: [
+        {
+            id: "chimie", name: "Chimie Industrielle", icon: "🧪",
+            shortDesc: "Apprenez à fabriquer des savons, parfums, liquides et mistoline.",
+            description: "Formation complète en chimie industrielle vous permettant de maîtriser la fabrication de produits d'entretien et de beauté.",
+            contenu: ["Savons lavé", "Parfum", "Liquide", "Mistoline"],
+            objectifs: ["Maîtriser les techniques de base", "Fabriquer des produits de qualité", "Lancer sa propre production"],
+            duration: "2 jours", schedule: "9h00 — 13h00", days: "Samedi - Dimanche", type: "Séminaire",
+            prixInscription: 1000, prixFrais: 2500,
+            bonus: "Possibilité de choisir un seul cours : 1 000 HTG",
+            teacher: "Prof. Jean-Baptiste",
+            modules: [
+                { name: "Introduction à la chimie industrielle", done: false },
+                { name: "Fabrication de savons lavé", done: false },
+                { name: "Fabrication de parfum", done: false },
+                { name: "Fabrication de produits liquides", done: false },
+                { name: "Fabrication de mistoline", done: false },
+                { name: "Contrôle qualité et emballage", done: false }
+            ]
+        },
+        {
+            id: "decoration", name: "Décoration Événementielle", icon: "🎈",
+            shortDesc: "Maîtrisez l'art de la décoration de salles et d'événements.",
+            description: "Formation complète en décoration événementielle pour créer des décors magnifiques.",
+            contenu: ["Décoration de salles", "Arrangements floraux", "Design de tables", "Gestion d'événements"],
+            objectifs: ["Créer des décors professionnels", "Gérer un événement de A à Z"],
+            duration: "2 mois", schedule: "10h00 — 15h00", days: "Lundi - Vendredi", type: "Formation longue",
+            prixInscription: 1000, prixFrais: 9500, bonus: "Maillot inclus",
+            teacher: "Prof. Marie-Claire",
+            modules: [
+                { name: "Principes de base de la décoration", done: false },
+                { name: "Types de matériaux et outils", done: false },
+                { name: "Décoration de mariage", done: false },
+                { name: "Décoration d'anniversaire", done: false },
+                { name: "Arrangements floraux", done: false },
+                { name: "Design de tables", done: false },
+                { name: "Gestion de projet", done: false },
+                { name: "Projet final", done: false }
+            ]
+        },
+        {
+            id: "sandalerie", name: "Sandalerie", icon: "👡",
+            shortDesc: "Apprenez l'art de la fabrication artisanale de sandales.",
+            description: "Formation pratique en sandalerie pour fabriquer des sandales artisanales de qualité.",
+            contenu: ["Coupe des matériaux", "Assemblage", "Finition", "Design"],
+            objectifs: ["Fabriquer des sandales de qualité", "Créer ses propres designs"],
+            duration: "2 mois", schedule: "10h00 — 15h00", days: "Lundi - Vendredi", type: "Formation longue",
+            prixInscription: 1000, prixFrais: 9000, bonus: "Maillot inclus",
+            teacher: "Prof. Richardson",
+            modules: [
+                { name: "Introduction à la sandalerie", done: false },
+                { name: "Choix des matériaux", done: false },
+                { name: "Techniques de coupe", done: false },
+                { name: "Assemblage", done: false },
+                { name: "Finition et détails", done: false },
+                { name: "Design personnalisé", done: false },
+                { name: "Projet final", done: false }
+            ]
+        },
+        {
+            id: "impression", name: "Impression Moderne", icon: "🖨️",
+            shortDesc: "Maîtrisez les techniques d'impression moderne.",
+            description: "Formation en impression moderne : tableaux PVC, lumineux, bidons personnalisés.",
+            contenu: ["Tableau PVC", "Tableau lumineux", "Bidon personnalisé", "Techniques d'impression"],
+            objectifs: ["Maîtriser les techniques d'impression", "Créer des supports publicitaires"],
+            duration: "2 jours", schedule: "9h00 — 13h00", days: "Samedi - Dimanche", type: "Séminaire",
+            prixInscription: 500, prixFrais: 4000, bonus: "",
+            teacher: "Prof. Widline",
+            modules: [
+                { name: "Introduction à l'impression moderne", done: false },
+                { name: "Fabrication de tableaux PVC", done: false },
+                { name: "Création de tableaux lumineux", done: false },
+                { name: "Personnalisation de bidons", done: false },
+                { name: "Techniques avancées", done: false }
+            ]
+        },
+        {
+            id: "bouquet", name: "Confection de Bouquets", icon: "💐",
+            shortDesc: "Créez de magnifiques bouquets : fleurs éternelles, cake money.",
+            description: "Formation artistique en confection de bouquets avec fleurs éternelles, fleurs d'argent, cake money.",
+            contenu: ["Fleurs éternelles", "Fleurs d'argent", "Emballage de bouteille", "Cake Money"],
+            objectifs: ["Créer des bouquets professionnels", "Développer sa créativité"],
+            duration: "2 jours", schedule: "9h00 — 13h00", days: "Samedi - Dimanche", type: "Séminaire",
+            prixInscription: 1000, prixFrais: 3000, bonus: "",
+            teacher: "Prof. Guerline",
+            modules: [
+                { name: "Introduction à l'art floral", done: false },
+                { name: "Fleurs éternelles", done: false },
+                { name: "Fleurs d'argent", done: false },
+                { name: "Emballage de bouteille", done: false },
+                { name: "Cake Money", done: false },
+                { name: "Bouquets personnalisés", done: false }
+            ]
+        },
+        {
+            id: "perruque", name: "Confection de Perruques", icon: "💇‍♀️",
+            shortDesc: "Apprenez la confection professionnelle de perruques sur 4 jours.",
+            description: "Formation intensive en confection de perruques sur 4 jours (2 samedis + 2 dimanches).",
+            contenu: ["Techniques de confection", "Pose de perruques", "Entretien", "Styles variés"],
+            objectifs: ["Confectionner des perruques professionnelles", "Maîtriser les techniques de pose"],
+            duration: "4 jours", schedule: "9h00 — 13h00", days: "2 samedis + 2 dimanches", type: "Séminaire spécial",
+            prixInscription: 1000, prixFrais: 7000, bonus: "Aiguilles gratuites",
+            teacher: "Prof. Nadège",
+            modules: [
+                { name: "Introduction et matériel", done: false },
+                { name: "Techniques de base (Jour 1)", done: false },
+                { name: "Techniques avancées (Jour 2)", done: false },
+                { name: "Styles et finitions (Jour 3)", done: false },
+                { name: "Projet final (Jour 4)", done: false }
+            ]
+        }
+    ],
+    teachers: [
+        { name: "Prof. Jean-Baptiste", specialty: "Chimie Industrielle", bio: "Expert en chimie industrielle avec plus de 10 ans d'expérience.", experience: "10+ ans", emoji: "🧪" },
+        { name: "Prof. Marie-Claire", specialty: "Décoration Événementielle", bio: "Décoratrice professionnelle spécialisée dans les événements haut de gamme.", experience: "8 ans", emoji: "🎈" },
+        { name: "Prof. Richardson", specialty: "Sandalerie", bio: "Artisan sandalier passionné, formé aux techniques traditionnelles et modernes.", experience: "12 ans", emoji: "👡" },
+        { name: "Prof. Widline", specialty: "Impression Moderne", bio: "Spécialiste en impression numérique et techniques publicitaires modernes.", experience: "7 ans", emoji: "🖨️" },
+        { name: "Prof. Guerline", specialty: "Confection de Bouquets", bio: "Artiste florale créative, reconnue pour ses bouquets uniques.", experience: "6 ans", emoji: "💐" },
+        { name: "Prof. Nadège", specialty: "Confection de Perruques", bio: "Experte en confection et pose de perruques.", experience: "9 ans", emoji: "💇‍♀️" }
+    ]
+};
+
+/* =====================================================
+   STOCKAGE
+   ===================================================== */
+function getStudents() {
+    try { return JSON.parse(localStorage.getItem('nova_students') || '[]'); }
+    catch(e) { return []; }
+}
+function saveStudents(s) {
+    try { localStorage.setItem('nova_students', JSON.stringify(s)); }
+    catch(e) { console.warn('Stockage indisponible'); }
+}
+function getCurrentUser() {
+    try { return JSON.parse(sessionStorage.getItem('nova_current_user') || 'null'); }
+    catch(e) { return null; }
+}
+function setCurrentUser(u) {
+    try { sessionStorage.setItem('nova_current_user', JSON.stringify(u)); }
+    catch(e) {}
+}
+function clearCurrentUser() {
+    try { sessionStorage.removeItem('nova_current_user'); }
+    catch(e) {}
+}
+function isAdminLoggedIn() {
+    try { return sessionStorage.getItem('nova_admin') === 'true'; }
+    catch(e) { return false; }
+}
+function setAdminLogin(status) {
+    try {
+        if (status) sessionStorage.setItem('nova_admin', 'true');
+        else sessionStorage.removeItem('nova_admin');
+    } catch(e) {}
+}
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+    var page = document.getElementById('page-' + pageId);
+    if (page) page.classList.add('active');
+
+    document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
+    var navLink = document.querySelector('.nav-links a[data-nav="' + pageId + '"]');
+    if (navLink) navLink.classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (pageId === 'dashboard') loadDashboard();
+    if (pageId === 'admin') loadAdmin();
+
+    // Fermer menu mobile
+    var mm = document.getElementById('mobileMenu');
+    var hb = document.getElementById('hamburger');
+    if (mm) mm.classList.remove('active');
+    if (hb) hb.classList.remove('active');
+}
+
+/* =====================================================
+   NOTIFICATIONS
+   ===================================================== */
+function showNotification(title, text, type) {
+    var notif = document.getElementById('notification');
+    if (!notif) return;
+    document.getElementById('notifTitle').textContent = title;
+    document.getElementById('notifText').textContent = text;
+    notif.className = 'notification show' + (type ? ' ' + type : '');
+    setTimeout(function() { notif.classList.remove('show'); }, 5000);
+}
+
+/* =====================================================
+   RENDER
+   ===================================================== */
+function generateFormationSVG(formation, index) {
+    var colors = ['#4A90D9', '#E91E63', '#8D6E63', '#FF5722', '#9C27B0', '#607D8B'];
+    var color = colors[index % colors.length];
+    return '<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">' +
+        '<defs><linearGradient id="grad' + index + '" x1="0%" y1="0%" x2="100%" y2="100%">' +
+        '<stop offset="0%" style="stop-color:' + color + ';stop-opacity:0.2"/>' +
+        '<stop offset="100%" style="stop-color:' + color + ';stop-opacity:0.05"/>' +
+        '</linearGradient></defs>' +
+        '<rect width="400" height="220" fill="url(#grad' + index + ')"/>' +
+        '<circle cx="200" cy="90" r="45" fill="' + color + '" opacity="0.2"/>' +
+        '<text x="200" y="105" text-anchor="middle" font-size="45">' + formation.icon + '</text>' +
+        '<text x="200" y="160" text-anchor="middle" fill="' + color + '" font-family="serif" font-size="14" font-weight="600">' + formation.name + '</text>' +
+        '<rect x="140" y="175" width="120" height="4" rx="2" fill="' + color + '" opacity="0.3"/>' +
+        '</svg>';
+}
+
+function renderFormationCards(containerId, formations) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+    var html = '';
+    for (var i = 0; i < formations.length; i++) {
+        var f = formations[i];
+        var idx = CONFIG.formations.indexOf(f);
+        var total = f.prixInscription + f.prixFrais;
+        html += '<div class="card animate-on-scroll">' +
+            '<div class="card-image">' + generateFormationSVG(f, idx) +
+            '<span class="card-badge">' + f.duration + '</span></div>' +
+            '<div class="card-content">' +
+            '<h3>' + f.icon + ' ' + f.name + '</h3>' +
+            '<p>' + f.shortDesc + '</p>' +
+            '<div class="card-meta">' +
+            '<span>🕐 ' + f.duration + '</span>' +
+            '<span>📅 ' + f.schedule + '</span></div>' +
+            '<div class="card-price"><div class="price">' + total.toLocaleString() + ' HTG <small>/ formation</small></div></div>' +
+            '<div class="card-buttons">' +
+            '<button type="button" class="btn btn-brown" data-formation="' + idx + '">VOIR</button>' +
+            '<button type="button" class="btn btn-outline" data-preselect="' + f.id + '">S\'INSCRIRE</button>' +
+            '</div></div></div>';
+    }
+    container.innerHTML = html;
+}
+
+function renderTeachers(containerId, teachers) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+    var html = '';
+    for (var i = 0; i < teachers.length; i++) {
+        var t = teachers[i];
+        html += '<div class="teacher-card animate-on-scroll">' +
+            '<div class="teacher-avatar">' + t.emoji + '</div>' +
+            '<h4>' + t.name + '</h4>' +
+            '<div class="specialty">' + t.specialty + '</div>' +
+            '<p>' + t.bio + '<br><strong>Expérience :</strong> ' + t.experience + '</p>' +
+            '</div>';
+    }
+    container.innerHTML = html;
+}
+
+function renderSchedule(tbodyId) {
+    var tbody = document.getElementById(tbodyId);
+    if (!tbody) return;
+    var html = '';
+    for (var i = 0; i < CONFIG.formations.length; i++) {
+        var f = CONFIG.formations[i];
+        html += '<tr><td><strong>' + f.icon + ' ' + f.name + '</strong></td>' +
+            '<td>' + f.duration + '</td>' +
+            '<td>' + f.schedule + '</td>' +
+            '<td>' + f.days + '</td>' +
+            '<td>' + f.type + '</td></tr>';
+    }
+    tbody.innerHTML = html;
+}
+
+function renderStats(containerId) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+    var html = '';
+    for (var i = 0; i < CONFIG.stats.length; i++) {
+        var s = CONFIG.stats[i];
+        html += '<div class="stat-card animate-on-scroll">' +
+            '<div class="number" data-target="' + s.number + '">0' + s.suffix + '</div>' +
+            '<div class="label">' + s.label + '</div></div>';
+    }
+    container.innerHTML = html;
+}
+
+function renderSeminarCards() {
+    var container = document.getElementById('seminarCards');
+    if (!container) return;
+    var html = '';
+    for (var i = 0; i < CONFIG.formations.length; i++) {
+        var f = CONFIG.formations[i];
+        if (f.type.indexOf('Séminaire') === -1) continue;
+        var idx = CONFIG.formations.indexOf(f);
+        html += '<div class="seminar-card animate-on-scroll">' +
+            '<h4>' + f.icon + ' ' + f.name + '</h4>' +
+            '<p class="info"><strong>Durée :</strong> ' + f.duration + '</p>' +
+            '<p class="info"><strong>Horaire :</strong> ' + f.schedule + '</p>' +
+            '<p class="info"><strong>Jours :</strong> ' + f.days + '</p>' +
+            '<p class="info"><strong>Prix :</strong> ' + f.prixFrais.toLocaleString() + ' HTG</p>' +
+            (f.bonus ? '<p class="info"><strong>Bonus :</strong> ' + f.bonus + '</p>' : '') +
+            '<div style="margin-top:15px;">' +
+            '<button type="button" class="btn btn-brown" data-formation="' + idx + '" style="font-size:0.8rem;padding:10px 18px;">VOIR LA FORMATION</button>' +
+            '</div></div>';
+    }
+    container.innerHTML = html;
+}
+
+/* =====================================================
+   FORMATION DETAIL
+   ===================================================== */
+function showFormationDetail(index) {
+    var f = CONFIG.formations[index];
+    if (!f) return;
+    var content = document.getElementById('formationDetailContent');
+    var total = f.prixInscription + f.prixFrais;
+    var contenuHtml = '';
+    for (var i = 0; i < f.contenu.length; i++) contenuHtml += '<li>' + f.contenu[i] + '</li>';
+    var objectifsHtml = '';
+    for (var i = 0; i < f.objectifs.length; i++) objectifsHtml += '<li>' + f.objectifs[i] + '</li>';
+    var modulesHtml = '';
+    for (var i = 0; i < f.modules.length; i++) modulesHtml += '<li>Module ' + (i+1) + ' : ' + f.modules[i].name + '</li>';
+
+    content.innerHTML =
+        '<div class="formation-hero"><div class="container"><div>' +
+        '<h1>' + f.icon + ' ' + f.name + '</h1>' +
+        '<p>' + f.description + '</p>' +
+        '<div class="formation-details">' +
+        '<div class="formation-detail-item"><div class="label">Durée</div><div class="value">' + f.duration + '</div></div>' +
+        '<div class="formation-detail-item"><div class="label">Horaire</div><div class="value">' + f.schedule + '</div></div>' +
+        '<div class="formation-detail-item"><div class="label">Inscription</div><div class="value">' + f.prixInscription.toLocaleString() + ' HTG</div></div>' +
+        '<div class="formation-detail-item"><div class="label">Frais</div><div class="value">' + f.prixFrais.toLocaleString() + ' HTG</div></div>' +
+        '</div>' +
+        '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;">' +
+        '<button type="button" class="btn btn-primary" data-preselect="' + f.id + '">📝 S\'INSCRIRE</button>' +
+        '<button type="button" class="btn btn-secondary" data-nav="login">🔐 SE CONNECTER</button>' +
+        '<a href="https://wa.me/' + CONFIG.institute.whatsapp + '?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20formation%20' + encodeURIComponent(f.name) + '" target="_blank" class="btn btn-secondary">💬 WHATSAPP</a>' +
+        '</div></div>' +
+        '<div style="text-align:center;">' + generateFormationSVG(f, index) + '</div>' +
+        '</div></div>' +
+        '<div class="formation-body"><div class="container">' +
+        '<h3>📋 Contenu</h3><ul>' + contenuHtml + '</ul>' +
+        '<h3>🎯 Objectifs</h3><ul>' + objectifsHtml + '</ul>' +
+        '<h3>📅 Programme</h3><ul>' + modulesHtml + '</ul>' +
+        '<h3>💰 Tarification</h3>' +
+        '<div class="payment-summary">' +
+        '<div class="line"><span>Frais d\'inscription :</span><span>' + f.prixInscription.toLocaleString() + ' HTG</span></div>' +
+        '<div class="line"><span>Frais de participation :</span><span>' + f.prixFrais.toLocaleString() + ' HTG</span></div>' +
+        '<div class="line total"><span>Total :</span><span>' + total.toLocaleString() + ' HTG</span></div>' +
+        '</div>' +
+        (f.bonus ? '<p style="color:var(--gold-dark);font-weight:600;margin-top:10px;">🎁 Bonus : ' + f.bonus + '</p>' : '') +
+        '<h3>👨‍🏫 Professeur</h3><p>' + f.teacher + '</p>' +
+        '<div style="margin-top:40px;text-align:center;">' +
+        '<button type="button" class="btn btn-brown" data-preselect="' + f.id + '" style="margin-right:10px;">📝 S\'INSCRIRE</button>' +
+        '<a href="https://wa.me/' + CONFIG.institute.whatsapp + '?text=Bonjour%2C%20je%20souhaite%20des%20infos%20sur%20' + encodeURIComponent(f.name) + '" target="_blank" class="btn btn-outline">💬 POSER UNE QUESTION</a>' +
+        '</div></div></div>';
+    showPage('formation-detail');
+}
+
+function preselectFormation(formationId) {
+    showPage('inscription');
+    setTimeout(function() {
+        var sel = document.getElementById('insc_formation');
+        if (sel) {
+            sel.value = formationId;
+            updatePaymentSummary();
+        }
+    }, 200);
+}
+
+/* =====================================================
+   INSCRIPTION
+   ===================================================== */
+function populateFormationSelect() {
+    var selects = ['insc_formation', 'req_formation'];
+    for (var s = 0; s < selects.length; s++) {
+        var select = document.getElementById(selects[s]);
+        if (!select) continue;
+        for (var i = 0; i < CONFIG.formations.length; i++) {
+            var f = CONFIG.formations[i];
+            var opt = document.createElement('option');
+            opt.value = f.id;
+            var total = f.prixInscription + f.prixFrais;
+            opt.textContent = f.icon + ' ' + f.name + ' — ' + total.toLocaleString() + ' HTG';
+            select.appendChild(opt);
+        }
+    }
+}
+
+function updatePaymentSummary() {
+    var select = document.getElementById('insc_formation');
+    if (!select) return;
+    var formation = null;
+    for (var i = 0; i < CONFIG.formations.length; i++) {
+        if (CONFIG.formations[i].id === select.value) { formation = CONFIG.formations[i]; break; }
+    }
+    var summary = document.getElementById('paymentSummary');
+    if (formation) {
+        summary.style.display = 'block';
+        var total = formation.prixInscription + formation.prixFrais;
+        document.getElementById('sumInsc').textContent = formation.prixInscription.toLocaleString() + ' HTG';
+        document.getElementById('sumFrais').textContent = formation.prixFrais.toLocaleString() + ' HTG';
+        document.getElementById('sumTotal').textContent = total.toLocaleString() + ' HTG';
+        var montantInput = document.getElementById('insc_montant');
+        if (montantInput) montantInput.value = total;
+    } else {
+        summary.style.display = 'none';
+    }
+}
+
+function handleInscription(e) {
+    e.preventDefault();
+    var nom = document.getElementById('insc_nom').value.trim();
+    var email = document.getElementById('insc_email').value.trim();
+    var tel = document.getElementById('insc_tel').value.trim();
+    var adresse = document.getElementById('insc_adresse').value.trim();
+    var formationId = document.getElementById('insc_formation').value;
+    var paiementEl = document.querySelector('input[name="payment_method"]:checked');
+
+    if (!paiementEl) {
+        showNotification('Erreur', 'Veuillez choisir un moyen de paiement (MonCash ou NatCash).', 'error');
+        return;
+    }
+
+    var paiement = paiementEl.value;
+    var numPay = document.getElementById('insc_num_pay').value.trim();
+    var montant = document.getElementById('insc_montant').value;
+    var ref = document.getElementById('insc_ref').value.trim();
+    var date = document.getElementById('insc_date').value;
+
+    var formation = null;
+    for (var i = 0; i < CONFIG.formations.length; i++) {
+        if (CONFIG.formations[i].id === formationId) { formation = CONFIG.formations[i]; break; }
+    }
+
+    var studentId = 'NOVA-' + Date.now().toString(36).toUpperCase();
+    var inscriptionId = 'INSC-' + Math.random().toString(36).substr(2, 6).toUpperCase();
+    var password = Math.random().toString(36).substr(2, 8);
+
+    var student = {
+        id: studentId, inscriptionId: inscriptionId,
+        nom: nom, email: email, tel: tel, adresse: adresse,
+        formationId: formationId, formationName: formation.name,
+        paiement: paiement, numPay: numPay, montant: montant,
+        ref: ref, date: date,
+        status: 'En attente de validation',
+        dateInscription: new Date().toISOString(),
+        password: password,
+        modules: formation.modules.map(function(m) { return { name: m.name, done: false }; })
+    };
+
+    var students = getStudents();
+    students.push(student);
+    saveStudents(students);
+
+    var waMessage = '🎓 *NOUVELLE INSCRIPTION - NOVA INSTITUTE*\n\n' +
+        '📋 *INFORMATIONS ÉTUDIANT*\n' +
+        'Nom : ' + nom + '\n' +
+        'Email : ' + email + '\n' +
+        'Téléphone : ' + tel + '\n' +
+        'Adresse : ' + (adresse || 'Non renseignée') + '\n' +
+        'N° Inscription : ' + inscriptionId + '\n' +
+        'N° Étudiant : ' + studentId + '\n\n' +
+        '📚 *FORMATION*\n' +
+        'Formation : ' + formation.name + '\n' +
+        'Durée : ' + formation.duration + '\n\n' +
+        '💰 *PAIEMENT*\n' +
+        'Moyen : ' + paiement + '\n' +
+        'Numéro payé : ' + numPay + '\n' +
+        'Montant : ' + montant + ' HTG\n' +
+        'Référence : ' + ref + '\n' +
+        'Date : ' + date + '\n\n' +
+        '⚠️ Merci de vérifier et de me communiquer mon code d\'accès.';
+
+    showNotification('✅ Inscription enregistrée !',
+        'Votre numéro : ' + inscriptionId + '\nVotre mot de passe : ' + password + '\n\nConservez ces informations ! Vos données vont être envoyées sur WhatsApp.',
+        'success');
+
+    setTimeout(function() {
+        window.open('https://wa.me/' + CONFIG.institute.whatsapp + '?text=' + encodeURIComponent(waMessage), '_blank');
+    }, 1500);
+
+    document.getElementById('inscriptionForm').reset();
+    document.getElementById('paymentSummary').style.display = 'none';
+    document.querySelectorAll('.payment-option').forEach(function(o) { o.classList.remove('selected'); });
+}
+
+/* =====================================================
+   DEMANDE CODE
+   ===================================================== */
+function handleCodeRequest(e) {
+    e.preventDefault();
+    var nom = document.getElementById('req_nom').value.trim();
+    var email = document.getElementById('req_email').value.trim();
+    var tel = document.getElementById('req_tel').value.trim();
+    var formationId = document.getElementById('req_formation').value;
+    var ref = document.getElementById('req_ref').value.trim();
+    var payment = document.getElementById('req_payment').value;
+
+    var formation = null;
+    for (var i = 0; i < CONFIG.formations.length; i++) {
+        if (CONFIG.formations[i].id === formationId) { formation = CONFIG.formations[i]; break; }
+    }
+
+    var waMessage = '🔑 *DEMANDE DE CODE D\'ACCÈS*\n\n' +
+        'Bonjour NOVA INSTITUTE,\n' +
+        'Je souhaite obtenir mon code d\'accès.\n\n' +
+        '📋 *MES INFORMATIONS*\n' +
+        'Nom : ' + nom + '\n' +
+        'Email : ' + email + '\n' +
+        'Téléphone : ' + tel + '\n' +
+        'Formation : ' + formation.name + '\n' +
+        'Moyen de paiement : ' + payment + '\n' +
+        'Référence transaction : ' + ref + '\n\n' +
+        'Merci de me communiquer mon code d\'accès.';
+
+    showNotification('📩 Demande envoyée !',
+        'Votre demande a été envoyée sur WhatsApp. NOVA INSTITUTE vous répondra rapidement.',
+        'success');
+
+    setTimeout(function() {
+        window.open('https://wa.me/' + CONFIG.institute.whatsapp + '?text=' + encodeURIComponent(waMessage), '_blank');
+    }, 1500);
+
+    document.getElementById('requestCodeForm').reset();
+}
+
+/* =====================================================
+   LOGIN
+   ===================================================== */
+function handleLogin(e) {
+    e.preventDefault();
+    var email = document.getElementById('login_email').value.trim();
+    var password = document.getElementById('login_password').value.trim();
+    var code = document.getElementById('login_code').value.trim().toUpperCase();
+
+    var students = getStudents();
+    var student = null;
+    for (var i = 0; i < students.length; i++) {
+        var s = students[i];
+        if ((s.email.toLowerCase() === email.toLowerCase() || s.id === email) && s.password === password) {
+            student = s;
+            break;
+        }
+    }
+
+    if (!student) {
+        showNotification('❌ Erreur', 'Email/identifiant ou mot de passe incorrect.', 'error');
+        return;
+    }
+
+    if (student.status !== 'Validé') {
+        showNotification('⏳ Inscription en attente',
+            'Votre inscription n\'a pas encore été validée. Statut : ' + student.status + '. Contactez-nous sur WhatsApp.',
+            'error');
+        return;
+    }
+
+    var expectedCode = CONFIG.accessCodes[student.formationId];
+    if (code !== expectedCode) {
+        showNotification('❌ Code invalide',
+            'Le code d\'accès est incorrect. Veuillez vérifier le code fourni par NOVA INSTITUTE.',
+            'error');
+        return;
+    }
+
+    setCurrentUser(student);
+    showNotification('✅ Connexion réussie !', 'Bienvenue ' + student.nom + ' !', 'success');
+    setTimeout(function() { showPage('dashboard'); }, 1000);
+    document.getElementById('loginForm').reset();
+}
+
+function handleLogout() {
+    clearCurrentUser();
+    showNotification('👋 Déconnexion', 'Vous avez été déconnecté avec succès.', 'success');
+    showPage('home');
+}
+
+/* =====================================================
+   DASHBOARD
+   ===================================================== */
+function loadDashboard() {
+    var user = getCurrentUser();
+    if (!user) { showPage('login'); return; }
+
+    var formation = null;
+    for (var i = 0; i < CONFIG.formations.length; i++) {
+        if (CONFIG.formations[i].id === user.formationId) { formation = CONFIG.formations[i]; break; }
+    }
+
+    document.getElementById('dashName').textContent = user.nom;
+    var dashCards = document.getElementById('dashCards');
+    var completedModules = user.modules ? user.modules.filter(function(m) { return m.done; }).length : 0;
+    var totalModules = user.modules ? user.modules.length : 0;
+
+    dashCards.innerHTML =
+        '<div class="dash-card"><h4>Nom</h4><div class="value">' + user.nom + '</div></div>' +
+        '<div class="dash-card"><h4>Email</h4><div class="value" style="font-size:0.9rem;">' + user.email + '</div></div>' +
+        '<div class="dash-card"><h4>N° Étudiant</h4><div class="value" style="font-size:0.9rem;font-family:monospace;">' + user.id + '</div></div>' +
+        '<div class="dash-card"><h4>Formation</h4><div class="value" style="font-size:0.9rem;">' + (formation ? formation.icon + ' ' + formation.name : user.formationName) + '</div></div>' +
+        '<div class="dash-card"><h4>Professeur</h4><div class="value" style="font-size:0.9rem;">' + (formation ? formation.teacher : '-') + '</div></div>' +
+        '<div class="dash-card"><h4>Statut</h4><div class="value" style="color:var(--success);">✅ ' + user.status + '</div></div>';
+
+    var progress = totalModules > 0 ? Math.round((completedModules / totalModules) * 100) : 0;
+    document.getElementById('dashProgressText').textContent = progress + '% complété — ' + completedModules + '/' + totalModules + ' modules terminés';
+    document.getElementById('dashProgressBar').style.width = progress + '%';
+
+    var moduleList = document.getElementById('moduleList');
+    var html = '';
+    for (var i = 0; i < (user.modules || []).length; i++) {
+        var m = user.modules[i];
+        html += '<li data-module="' + i + '">' +
+            '<div class="check ' + (m.done ? 'done' : 'pending') + '">' + (m.done ? '✓' : '○') + '</div>' +
+            '<div><strong style="font-size:0.9rem;">' + m.name + '</strong>' +
+            '<div style="font-size:0.8rem;color:var(--text-light);">' + (m.done ? 'Terminé' : 'À suivre') + '</div></div></li>';
+    }
+    moduleList.innerHTML = html;
+}
+
+function toggleModule(index) {
+    var user = getCurrentUser();
+    if (!user || !user.modules) return;
+    user.modules[index].done = !user.modules[index].done;
+    setCurrentUser(user);
+    var students = getStudents();
+    for (var i = 0; i < students.length; i++) {
+        if (students[i].id === user.id) { students[i] = user; break; }
+    }
+    saveStudents(students);
+    loadDashboard();
+}
+
+/* =====================================================
+   ADMIN
+   ===================================================== */
+function loadAdmin() {
+    var content = document.getElementById('adminContent');
+    if (!isAdminLoggedIn()) {
+        content.innerHTML =
+            '<section class="section"><div class="admin-login">' +
+            '<h2 style="color:var(--brown-dark);margin-bottom:10px;">🔐 Administration</h2>' +
+            '<p style="color:var(--text-light);margin-bottom:30px;">Accès réservé à l\'administrateur</p>' +
+            '<form id="adminLoginForm">' +
+            '<div class="form-group"><label>Mot de passe administrateur</label>' +
+            '<input type="password" id="admin_password" required placeholder="Mot de passe" style="text-align:center;"></div>' +
+            '<button type="submit" class="btn btn-brown" style="width:100%;justify-content:center;">ACCÉDER</button>' +
+            '</form></div></section>';
+        return;
+    }
+
+    var students = getStudents();
+    var pendingCount = students.filter(function(s) { return s.status === 'En attente de validation'; }).length;
+    var validatedCount = students.filter(function(s) { return s.status === 'Validé'; }).length;
+
+    var codesHtml = '';
+    for (var i = 0; i < CONFIG.formations.length; i++) {
+        var f = CONFIG.formations[i];
+        var code = CONFIG.accessCodes[f.id];
+        codesHtml += '<div class="code-card">' +
+            '<h4>' + f.icon + ' ' + f.name + '</h4>' +
+            '<div class="code-value" data-copy-code="' + code + '">' + code + '</div>' +
+            '<small style="color:var(--text-light);">Cliquez pour copier</small>' +
+            '<div class="actions">' +
+            '<button type="button" class="btn btn-whatsapp" data-send-code-formation="' + f.id + '">💬 Envoyer via WhatsApp</button>' +
+            '</div></div>';
+    }
+
+    var rowsHtml = '';
+    if (students.length === 0) {
+        rowsHtml = '<tr><td colspan="10" style="text-align:center;padding:30px;">Aucune inscription</td></tr>';
+    } else {
+        for (var i = 0; i < students.length; i++) {
+            var s = students[i];
+            var statusClass = s.status === 'Validé' ? 'active' : (s.status === 'Rejeté' ? 'rejected' : 'pending');
+            var actionsHtml = '';
+            if (s.status !== 'Validé') actionsHtml += '<button type="button" class="btn btn-success" style="padding:6px 10px;font-size:0.75rem;margin-bottom:5px;" data-validate="' + i + '">✅ Valider</button> ';
+            if (s.status !== 'Rejeté') actionsHtml += '<button type="button" class="btn btn-danger" style="padding:6px 10px;font-size:0.75rem;margin-bottom:5px;" data-reject="' + i + '">❌ Rejeter</button> ';
+            actionsHtml += '<button type="button" class="btn btn-whatsapp" style="padding:6px 10px;font-size:0.75rem;" data-contact="' + i + '">💬 WhatsApp</button> ';
+            actionsHtml += '<button type="button" class="btn btn-outline" style="padding:6px 10px;font-size:0.75rem;margin-top:5px;" data-send-code="' + i + '">🔑 Envoyer code</button>';
+
+            rowsHtml += '<tr>' +
+                '<td><small style="font-family:monospace;">' + s.inscriptionId + '</small></td>' +
+                '<td><strong>' + s.nom + '</strong><br><small>' + s.id + '</small></td>' +
+                '<td>' + s.email + '</td>' +
+                '<td>' + s.tel + '</td>' +
+                '<td>' + s.formationName + '</td>' +
+                '<td>' + s.paiement + '<br><small>' + s.numPay + '</small></td>' +
+                '<td>' + parseInt(s.montant).toLocaleString() + ' HTG</td>' +
+                '<td><small style="font-family:monospace;">' + s.ref + '</small></td>' +
+                '<td><span class="status-badge status-' + statusClass + '">' + s.status + '</span></td>' +
+                '<td>' + actionsHtml + '</td></tr>';
+        }
+    }
+
+    content.innerHTML =
+        '<div class="admin-header"><div class="container">' +
+        '<h2>🛠️ Panel d\'Administration</h2>' +
+        '<p>Gérez les inscriptions et les codes d\'accès</p>' +
+        '<button type="button" class="btn btn-secondary" style="margin-top:15px;" id="adminLogoutBtn">🚪 Déconnexion</button>' +
+        '</div></div>' +
+        '<div class="admin-container">' +
+        '<div class="admin-grid">' +
+        '<div class="admin-stat"><h4>Total inscriptions</h4><div class="value">' + students.length + '</div></div>' +
+        '<div class="admin-stat"><h4>En attente</h4><div class="value" style="color:var(--warning);">' + pendingCount + '</div></div>' +
+        '<div class="admin-stat"><h4>Validées</h4><div class="value" style="color:var(--success);">' + validatedCount + '</div></div>' +
+        '<div class="admin-stat"><h4>Formations</h4><div class="value">' + CONFIG.formations.length + '</div></div>' +
+        '</div>' +
+        '<h3 style="color:var(--brown-dark);margin-bottom:20px;">🔑 Codes d\'accès par formation</h3>' +
+        '<div class="codes-grid">' + codesHtml + '</div>' +
+        '<h3 style="color:var(--brown-dark);margin:30px 0 20px;">📋 Liste des inscriptions</h3>' +
+        '<div class="admin-table-container"><div style="overflow-x:auto;">' +
+        '<table class="admin-table"><thead><tr>' +
+        '<th>N°</th><th>Nom</th><th>Email</th><th>Téléphone</th><th>Formation</th>' +
+        '<th>Paiement</th><th>Montant</th><th>Référence</th><th>Statut</th><th>Actions</th>' +
+        '</tr></thead><tbody>' + rowsHtml + '</tbody></table></div></div>' +
+        '<div class="info-box">💡 <strong>Astuce :</strong> Pour modifier les codes d\'accès, éditez l\'objet <code>CONFIG.accessCodes</code> dans le code source. Mot de passe admin : <code>CONFIG.adminPassword</code>.</div>' +
+        '</div>';
+}
+
+function adminLogin(e) {
+    e.preventDefault();
+    var password = document.getElementById('admin_password').value;
+    if (password === CONFIG.adminPassword) {
+        setAdminLogin(true);
+        showNotification('✅ Connecté', 'Bienvenue administrateur.', 'success');
+        loadAdmin();
+    } else {
+        showNotification('❌ Erreur', 'Mot de passe incorrect.', 'error');
+    }
+}
+
+function adminLogout() {
+    setAdminLogin(false);
+    showNotification('👋 Déconnecté', 'Vous avez été déconnecté.', 'success');
+    showPage('home');
+}
+
+function validateStudent(index) {
+    var students = getStudents();
+    students[index].status = 'Validé';
+    saveStudents(students);
+    showNotification('✅ Validé', 'Inscription de ' + students[index].nom + ' validée.', 'success');
+    loadAdmin();
+}
+
+function rejectStudent(index) {
+    if (!confirm('Voulez-vous vraiment rejeter cette inscription ?')) return;
+    var students = getStudents();
+    students[index].status = 'Rejeté';
+    saveStudents(students);
+    showNotification('❌ Rejeté', 'Inscription de ' + students[index].nom + ' rejetée.', 'error');
+    loadAdmin();
+}
+
+function contactStudent(index) {
+    var s = getStudents()[index];
+    var msg = 'Bonjour ' + s.nom + ', concernant votre inscription ' + s.inscriptionId + ' à la formation ' + s.formationName + '.';
+    var tel = s.tel.replace(/\D/g, '');
+    window.open('https://wa.me/' + tel + '?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function sendAccessCode(index) {
+    var s = getStudents()[index];
+    var formation = null;
+    for (var i = 0; i < CONFIG.formations.length; i++) {
+        if (CONFIG.formations[i].id === s.formationId) { formation = CONFIG.formations[i]; break; }
+    }
+    var code = CONFIG.accessCodes[s.formationId];
+    var msg = '🔑 *VOTRE CODE D\'ACCÈS - NOVA INSTITUTE*\n\n' +
+        'Bonjour ' + s.nom + ',\n\n' +
+        'Votre inscription à la formation *' + formation.name + '* a été validée !\n\n' +
+        '📧 Email : ' + s.email + '\n' +
+        '🔑 Mot de passe : ' + s.password + '\n' +
+        '🎟️ Code d\'accès : *' + code + '*\n\n' +
+        'Connectez-vous sur le site avec ces informations.\n\nNOVA INSTITUTE';
+    var tel = s.tel.replace(/\D/g, '');
+    window.open('https://wa.me/' + tel + '?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function sendCodeToFormation(formationId) {
+    var students = getStudents().filter(function(s) { return s.formationId === formationId && s.status === 'Validé'; });
+    if (students.length === 0) {
+        showNotification('Info', 'Aucun étudiant validé pour cette formation.', 'error');
+        return;
+    }
+    var code = CONFIG.accessCodes[formationId];
+    var formation = null;
+    for (var i = 0; i < CONFIG.formations.length; i++) {
+        if (CONFIG.formations[i].id === formationId) { formation = CONFIG.formations[i]; break; }
+    }
+    alert('Code d\'accès pour ' + formation.name + ' : ' + code + '\n\nÉtudiants validés : ' + students.length + '\nUtilisez "Envoyer code" dans la liste pour envoyer individuellement.');
+}
+
+function copyCode(code) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(function() {
+            showNotification('📋 Copié', 'Code ' + code + ' copié.', 'success');
+        }).catch(function() {
+            prompt('Copiez ce code :', code);
+        });
+    } else {
+        prompt('Copiez ce code :', code);
+    }
+}
+
+/* =====================================================
+   TABS LOGIN
+   ===================================================== */
+function switchLoginTab(tabName) {
+    document.querySelectorAll('#page-login .tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('#page-login .tab-content').forEach(function(c) { c.classList.remove('active'); });
+    var activeTab = document.querySelector('#page-login .tab[data-tab="' + tabName + '"]');
+    if (activeTab) activeTab.classList.add('active');
+    document.getElementById('tab-' + tabName).classList.add('active');
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+function animateCounters() {
+    document.querySelectorAll('.stat-card .number').forEach(function(el) {
+        var target = parseInt(el.dataset.target);
+        if (isNaN(target)) return;
+        var suffix = el.textContent.replace(/[0-9]/g, '');
+        var current = 0;
+        var increment = target / 50;
+        var timer = setInterval(function() {
+            current += increment;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = Math.floor(current) + suffix;
+        }, 30);
+    });
+}
+
+function initScrollAnimations() {
+    if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.animate-on-scroll').forEach(function(el) { el.classList.add('visible'); });
+        return;
+    }
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(function(el) { observer.observe(el); });
+}
+
+/* =====================================================
+   INITIALISATION
+   ===================================================== */
+function init() {
+    try {
+        // Navigation - data-nav
+        document.querySelectorAll('[data-nav]').forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                e.preventDefault();
+                var page = this.getAttribute('data-nav');
+                showPage(page);
+            });
+        });
+
+        // Formation detail
+        document.addEventListener('click', function(e) {
+            var target = e.target;
+            if (target.hasAttribute('data-formation')) {
+                var idx = parseInt(target.getAttribute('data-formation'));
+                showFormationDetail(idx);
+            }
+            if (target.hasAttribute('data-preselect')) {
+                preselectFormation(target.getAttribute('data-preselect'));
+            }
+            if (target.hasAttribute('data-module')) {
+                toggleModule(parseInt(target.getAttribute('data-module')));
+            }
+            if (target.hasAttribute('data-validate')) {
+                validateStudent(parseInt(target.getAttribute('data-validate')));
+            }
+            if (target.hasAttribute('data-reject')) {
+                rejectStudent(parseInt(target.getAttribute('data-reject')));
+            }
+            if (target.hasAttribute('data-contact')) {
+                contactStudent(parseInt(target.getAttribute('data-contact')));
+            }
+            if (target.hasAttribute('data-send-code')) {
+                sendAccessCode(parseInt(target.getAttribute('data-send-code')));
+            }
+            if (target.hasAttribute('data-send-code-formation')) {
+                sendCodeToFormation(target.getAttribute('data-send-code-formation'));
+            }
+            if (target.hasAttribute('data-copy-code')) {
+                copyCode(target.getAttribute('data-copy-code'));
+            }
+            if (target.hasAttribute('data-tab')) {
+                switchLoginTab(target.getAttribute('data-tab'));
+            }
+        });
+
+        // Hamburger
+        var hamburger = document.getElementById('hamburger');
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                document.getElementById('mobileMenu').classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        }
+
+        // Forms
+        var inscForm = document.getElementById('inscriptionForm');
+        if (inscForm) inscForm.addEventListener('submit', handleInscription);
+
+        var loginForm = document.getElementById('loginForm');
+        if (loginForm) loginForm.addEventListener('submit', handleLogin);
+
+        var reqForm = document.getElementById('requestCodeForm');
+        if (reqForm) reqForm.addEventListener('submit', handleCodeRequest);
+
+        var adminLoginForm = document.getElementById('adminLoginForm');
+        if (adminLoginForm) adminLoginForm.addEventListener('submit', adminLogin);
+
+        var logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) logoutBtn.addEventListener('click', handleLogout);
+
+        var adminLogoutBtn = document.getElementById('adminLogoutBtn');
+        if (adminLogoutBtn) adminLogoutBtn.addEventListener('click', adminLogout);
+
+        var gotoRequest = document.getElementById('gotoRequest');
+        if (gotoRequest) gotoRequest.addEventListener('click', function() { switchLoginTab('request'); });
+
+        var inscFormation = document.getElementById('insc_formation');
+        if (inscFormation) inscFormation.addEventListener('change', updatePaymentSummary);
+
+        // Payment options
+        document.querySelectorAll('.payment-option input[type="radio"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                document.querySelectorAll('.payment-option').forEach(function(o) { o.classList.remove('selected'); });
+                this.closest('.payment-option').classList.add('selected');
+            });
+        });
+
+        // Render content
+        renderFormationCards('homeFormations', CONFIG.formations.slice(0, 3));
+        renderFormationCards('allFormations', CONFIG.formations);
+        renderTeachers('homeTeachers', CONFIG.teachers.slice(0, 3));
+        renderTeachers('allTeachers', CONFIG.teachers);
+        renderSchedule('schedulePreview');
+        renderSchedule('fullSchedule');
+        renderStats('statsGrid');
+        renderSeminarCards();
+        populateFormationSelect();
+
+        var dateInput = document.getElementById('insc_date');
+        if (dateInput) {
+            var today = new Date().toISOString().split('T')[0];
+            dateInput.value = today;
+        }
+
+        // Animations
+        setTimeout(initScrollAnimations, 100);
+        setTimeout(animateCounters, 500);
+
+        // Check URL hash
+        if (window.location.hash === '#admin') showPage('admin');
+
+    } catch(err) {
+        console.error('Erreur init:', err);
+    }
+}
+
+/* =====================================================
+   LOADER - TOUJOURS CACHER (meme si erreur)
+   ===================================================== */
+function hideLoader() {
+    var loader = document.getElementById('pageLoader');
+    if (loader) loader.classList.add('hidden');
+}
+
+// Cacher le loader après 1.5s MAXIMUM (garanti)
+setTimeout(hideLoader, 1500);
+
+// Fallback si DOMContentLoaded deja passe
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        init();
+    });
+} else {
+    init();
+}
+
+// Sécurité : cacher le loader au chargement complet aussi
+window.addEventListener('load', hideLoader);
+</script>
+
+</body>
+</html>
