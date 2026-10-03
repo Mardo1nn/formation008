@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Institute - Centre de Formation Professionnelle</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/poppins@5.0.8/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/playfair-display@5.0.19/index.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#fff;color:#333;overflow-x:hidden}
+:root{--brown-dark:#2d1810;--brown-main:#6b3a2a;--brown-light:#8b5a3c;--brown-lighter:#c49a6c;--cream:#fdf6f0;--white:#ffffff;--gold:#d4a574;--gold-light:#e8c9a0;--gold-dark:#b8864a}
+
+/* Marquee amélioré */
+.marquee-container{background:linear-gradient(90deg,#1a0d07,var(--brown-dark),var(--brown-main),var(--brown-dark),#1a0d07);color:var(--gold);padding:14px 0;overflow:hidden;white-space:nowrap;position:relative;border-bottom:3px solid var(--gold)}
+.marquee-container::before,.marquee-container::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.marquee-container::before{left:0;background:linear-gradient(90deg,#1a0d07,transparent)}
+.marquee-container::after{right:0;background:linear-gradient(270deg,#1a0d07,transparent)}
+.marquee-text{display:inline-block;animation:marquee 35s linear infinite;font-size:15px;font-weight:500;letter-spacing:0.5px}
+.marquee-text span{display:inline-block;margin:0 20px}
+.marquee-text .divider{color:var(--gold);margin:0 15px}
+@keyframes marquee{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+
+/* Header luxueux */
+header{background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);box-shadow:0 4px 30px rgba(74,44,23,0.12);position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(212,165,116,0.2)}
+.header-content{max-width:1300px;margin:0 auto;padding:20px 30px;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:15px}
+.logo-icon{width:60px;height:60px;background:linear-gradient(135deg,var(--brown-main),var(--gold),var(--brown-light));border-radius:18px;display:flex;align-items:center;justify-content:center;color:white;font-size:22px;font-weight:bold;box-shadow:0 8px 25px rgba(107,58,42,0.35);position:relative;overflow:hidden}
+.logo-icon::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,255,255,0.2),transparent);animation:shine 3s infinite}
+@keyframes shine{0%{transform:translateX(-100%) translateY(-100%)}100%{transform:translateX(100%) translateY(100%)}}
+.logo-text h1{font-family:'Playfair Display',serif;font-size:26px;color:var(--brown-dark);font-weight:700;letter-spacing:0.5px}
+.logo-text p{font-size:11px;color:var(--brown-light);font-weight:500;letter-spacing:2px;text-transform:uppercase}
+nav{display:flex;gap:28px;align-items:center}
+nav a{text-decoration:none;color:var(--brown-dark);font-weight:500;font-size:14px;transition:all 0.3s;position:relative;letter-spacing:0.3px}
+nav a:hover{color:var(--gold-dark)}
+nav a::after{content:'';position:absolute;bottom:-6px;left:50%;width:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--brown-main));transition:all 0.3s;transform:translateX(-50%)}
+nav a:hover::after{width:100%}
+
+.btn{padding:12px 28px;border:none;border-radius:10px;font-weight:600;cursor:pointer;transition:all 0.3s;font-size:14px;text-decoration:none;display:inline-block;font-family:'Poppins',sans-serif}
+.btn-primary{background:linear-gradient(135deg,var(--brown-main),var(--brown-light));color:white;box-shadow:0 4px 15px rgba(107,58,42,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(107,58,42,0.4)}
+.btn-outline{background:transparent;border:2px solid var(--brown-main);color:var(--brown-main)}
+.btn-outline:hover{background:var(--brown-main);color:white}
+
+/* Hero luxueux */
+.hero{background:linear-gradient(135deg,#1a0d07 0%,var(--brown-dark) 30%,var(--brown-main) 70%,var(--brown-light) 100%);padding:120px 20px;text-align:center;color:white;position:relative;overflow:hidden;min-height:600px;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(circle at 20% 50%,rgba(212,165,116,0.15) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(212,165,116,0.1) 0%,transparent 50%),radial-gradient(circle at 40% 20%,rgba(255,255,255,0.05) 0%,transparent 50%)}
+.hero::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(212,165,116,0.1)"/></svg>') repeat;background-size:40px 40px;opacity:0.5}
+.hero-content{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-block;padding:8px 20px;background:rgba(212,165,116,0.15);border:1px solid var(--gold);border-radius:50px;color:var(--gold);font-size:13px;font-weight:500;margin-bottom:25px;letter-spacing:2px;text-transform:uppercase;backdrop-filter:blur(10px)}
+.hero h2{font-family:'Playfair Display',serif;font-size:62px;margin-bottom:25px;font-weight:700;line-height:1.15;text-shadow:2px 4px 20px rgba(0,0,0,0.4);background:linear-gradient(135deg,#fff 0%,var(--gold-light) 50%,#fff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:19px;margin-bottom:40px;opacity:0.95;line-height:1.7;max-width:750px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.9)}
+.hero-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+.btn-hero{padding:18px 42px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--brown-dark);border-radius:12px;font-weight:700;font-size:16px;box-shadow:0 10px 30px rgba(212,165,116,0.4);cursor:pointer;border:none;font-family:'Poppins',sans-serif;transition:all 0.3s;letter-spacing:0.5px}
+.btn-hero:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(212,165,116,0.5)}
+.btn-hero-outline{padding:18px 42px;background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.4);color:white;border-radius:12px;font-weight:600;font-size:16px;cursor:pointer;backdrop-filter:blur(10px);transition:all 0.3s;font-family:'Poppins',sans-serif}
+.btn-hero-outline:hover{background:white;color:var(--brown-dark);border-color:white}
+
+.hero-stats{display:flex;justify-content:center;gap:60px;margin-top:60px;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat .number{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--gold);display:block;line-height:1}
+.hero-stat .label{font-size:13px;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:1.5px;margin-top:8px}
+
+/* Sections */
+section{padding:100px 20px}
+.section-title{text-align:center;margin-bottom:70px}
+.section-title .subtitle{display:inline-block;padding:6px 18px;background:rgba(212,165,116,0.15);color:var(--gold-dark);border-radius:50px;font-size:12px;font-weight:600;margin-bottom:15px;letter-spacing:2px;text-transform:uppercase}
+.section-title h2{font-family:'Playfair Display',serif;font-size:44px;color:var(--brown-dark);margin-bottom:15px;font-weight:700}
+.section-title p{color:var(--brown-light);font-size:16px;max-width:600px;margin:0 auto}
+.section-title .line{width:80px;height:4px;background:linear-gradient(90deg,var(--brown-main),var(--gold));margin:20px auto;border-radius:2px;position:relative}
+.section-title .line::before,.section-title .line::after{content:'';position:absolute;top:50%;width:8px;height:8px;background:var(--gold);border-radius:50%;transform:translateY(-50%)}
+.section-title .line::before{left:-15px}
+.section-title .line::after{right:-15px}
+
+/* Objectifs */
+.objectifs{background:linear-gradient(180deg,var(--cream) 0%,#fff 100%)}
+.objectifs-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+.objectif-card{background:white;padding:40px 30px;border-radius:25px;text-align:center;box-shadow:0 10px 40px rgba(74,44,23,0.08);transition:all 0.4s;border:1px solid rgba(212,165,116,0.2);position:relative;overflow:hidden}
+.objectif-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--brown-main),var(--gold));transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+.objectif-card:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(74,44,23,0.15);border-color:var(--gold)}
+.objectif-card:hover::before{transform:scaleX(1)}
+.objectif-icon{width:85px;height:85px;background:linear-gradient(135deg,var(--brown-main),var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 25px;color:white;font-size:34px;box-shadow:0 8px 25px rgba(107,58,42,0.3)}
+.objectif-card h3{color:var(--brown-dark);margin-bottom:15px;font-size:20px;font-weight:700;font-family:'Playfair Display',serif}
+.objectif-card p{color:#666;font-size:14px;line-height:1.7}
+
+/* Catalogue */
+.catalogue{max-width:1400px;margin:0 auto}
+.formations-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:40px}
+.formation-card{background:white;border-radius:25px;overflow:hidden;box-shadow:0 10px 40px rgba(74,44,23,0.1);transition:all 0.5s;border:1px solid rgba(212,165,116,0.15);position:relative}
+.formation-card:hover{transform:translateY(-12px);box-shadow:0 25px 60px rgba(74,44,23,0.2);border-color:var(--gold)}
+.formation-image{height:260px;display:flex;align-items:center;justify-content:center;color:white;font-size:90px;position:relative;overflow:hidden}
+.formation-image::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(0,0,0,0.2),rgba(0,0,0,0.5));z-index:1}
+.formation-image::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,0.1),transparent 60%);z-index:2}
+.formation-image i{position:relative;z-index:3;filter:drop-shadow(2px 4px 12px rgba(0,0,0,0.4))}
+.formation-badge{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--brown-dark);padding:10px 18px;border-radius:30px;font-size:13px;font-weight:700;box-shadow:0 4px 15px rgba(0,0,0,0.25);z-index:4;letter-spacing:0.5px}
+.formation-whatsapp{position:absolute;top:20px;left:20px;width:45px;height:45px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:22px;z-index:4;text-decoration:none;box-shadow:0 4px 15px rgba(37,211,102,0.4);transition:all 0.3s}
+.formation-whatsapp:hover{transform:scale(1.15);box-shadow:0 6px 20px rgba(37,211,102,0.6)}
+.formation-content{padding:35px}
+.formation-content h3{color:var(--brown-dark);font-size:24px;margin-bottom:12px;font-weight:700;font-family:'Playfair Display',serif}
+.formation-content p{color:#666;font-size:14px;margin-bottom:20px;line-height:1.7}
+.formation-details{display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
+.formation-detail{display:flex;align-items:center;gap:12px;font-size:13px;color:#555}
+.formation-detail i{color:var(--gold-dark);width:20px;font-size:15px}
+.formation-price{display:flex;justify-content:space-between;align-items:center;padding-top:22px;border-top:2px solid #f0f0f0;gap:10px}
+.price-info{display:flex;flex-direction:column}
+.price-info span{font-size:11px;color:#999;font-weight:500;text-transform:uppercase;letter-spacing:1px}
+.price-info strong{color:var(--brown-dark);font-size:20px;font-weight:700;font-family:'Playfair Display',serif}
+.btn-inscription{padding:13px 24px;background:linear-gradient(135deg,var(--brown-main),var(--brown-light));color:white;border:none;border-radius:10px;font-weight:600;cursor:pointer;transition:all 0.3s;font-size:13px;box-shadow:0 4px 15px rgba(107,58,42,0.3);white-space:nowrap;font-family:'Poppins',sans-serif}
+.btn-inscription:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(107,58,42,0.4)}
+
+/* Témoignages */
+.temoignages{background:linear-gradient(180deg,#fff 0%,var(--cream) 100%)}
+.temoignages-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:35px}
+.temoignage-card{background:white;padding:40px;border-radius:25px;box-shadow:0 10px 40px rgba(74,44,23,0.08);transition:all 0.4s;border:1px solid rgba(212,165,116,0.15);position:relative}
+.temoignage-card::before{content:'"';position:absolute;top:10px;right:25px;font-family:'Playfair Display',serif;font-size:100px;color:var(--gold-light);line-height:1;opacity:0.5}
+.temoignage-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(74,44,23,0.15)}
+.temoignage-header{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+.temoignage-avatar{width:65px;height:65px;background:linear-gradient(135deg,var(--brown-main),var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:22px;box-shadow:0 4px 15px rgba(107,58,42,0.3)}
+.temoignage-info h4{color:var(--brown-dark);font-size:18px;font-weight:700;font-family:'Playfair Display',serif}
+.temoignage-info span{color:var(--brown-light);font-size:13px}
+.temoignage-stars{color:var(--gold);margin-bottom:15px;font-size:17px}
+.temoignage-card p{color:#555;font-size:15px;line-height:1.8;font-style:italic;position:relative;z-index:1}
+
+/* Contact */
+.contact{max-width:1300px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.contact-card{text-align:center;padding:40px 30px;background:linear-gradient(135deg,#fff,var(--cream));border-radius:25px;transition:all 0.4s;border:1px solid rgba(212,165,116,0.2)}
+.contact-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 15px 40px rgba(74,44,23,0.12)}
+.contact-card i{font-size:42px;color:var(--brown-main);margin-bottom:20px}
+.contact-card h4{color:var(--brown-dark);margin-bottom:12px;font-size:18px;font-weight:700;font-family:'Playfair Display',serif}
+.contact-card p{color:#666;font-size:14px;line-height:1.6}
+
+/* Footer */
+footer{background:linear-gradient(135deg,#1a0d07,var(--brown-dark),var(--brown-main));color:white;padding:60px 20px 25px;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--brown-main),var(--gold),var(--brown-main))}
+.footer-content{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-bottom:40px}
+.footer-section h4{margin-bottom:20px;color:var(--gold);font-size:18px;font-weight:700;font-family:'Playfair Display',serif;position:relative;padding-bottom:10px}
+.footer-section h4::after{content:'';position:absolute;bottom:0;left:0;width:40px;height:2px;background:var(--gold)}
+.footer-section p,.footer-section a{color:rgba(255,255,255,0.8);font-size:14px;line-height:2.2;text-decoration:none;display:block;transition:color 0.3s}
+.footer-section a:hover{color:var(--gold);padding-left:5px}
+.footer-bottom{text-align:center;padding-top:25px;border-top:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);font-size:13px}
+
+/* Modal */
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(26,13,7,0.85);z-index:2000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(10px)}
+.modal-overlay.active{display:flex}
+.modal{background:white;border-radius:30px;padding:45px;max-width:580px;width:100%;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.4)}
+.modal-close{position:absolute;top:20px;right:25px;font-size:30px;cursor:pointer;color:#999;background:none;border:none;transition:all 0.3s;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{color:var(--brown-dark);background:var(--cream)}
+.modal h2{color:var(--brown-dark);margin-bottom:25px;font-size:28px;font-weight:700;font-family:'Playfair Display',serif}
+
+.form-group{margin-bottom:20px}
+.form-group label{display:block;margin-bottom:8px;color:var(--brown-dark);font-weight:600;font-size:14px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 18px;border:2px solid #e8e8e8;border-radius:12px;font-size:14px;font-family:'Poppins',sans-serif;transition:all 0.3s;background:#fafafa}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--brown-main);box-shadow:0 0 0 4px rgba(107,58,42,0.1);background:white}
+
+.form-submit{width:100%;padding:16px;background:linear-gradient(135deg,var(--brown-main),var(--brown-light));color:white;border:none;border-radius:12px;font-weight:600;font-size:16px;cursor:pointer;transition:all 0.3s;box-shadow:0 6px 20px rgba(107,58,42,0.3);font-family:'Poppins',sans-serif}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(107,58,42,0.4)}
+.form-switch{text-align:center;margin-top:18px;font-size:14px;color:#666}
+.form-switch a{color:var(--brown-main);font-weight:600;cursor:pointer;text-decoration:none}
+
+.payment-info{background:linear-gradient(135deg,var(--cream),#fff);border:2px solid var(--gold-light);border-radius:18px;padding:22px;margin:18px 0}
+.payment-info h4{color:var(--brown-dark);margin-bottom:15px;font-size:15px;display:flex;align-items:center;gap:10px;font-weight:700}
+.payment-methods{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.payment-method{padding:18px 15px;border:2px solid #e8e8e8;border-radius:14px;cursor:pointer;transition:all 0.3s;text-align:center;background:white}
+.payment-method:hover{border-color:var(--gold)}
+.payment-method.selected{border-color:var(--brown-main);background:linear-gradient(135deg,var(--cream),#fff);box-shadow:0 4px 15px rgba(107,58,42,0.15)}
+.payment-method i{font-size:30px;color:var(--brown-main);margin-bottom:8px;display:block}
+.payment-method strong{display:block;color:var(--brown-dark);font-size:14px;margin-bottom:3px}
+.payment-method span{font-size:12px;color:#999;font-family:monospace}
+
+.payment-details{margin-top:15px;padding:15px;background:white;border-radius:12px;border:1px solid #e8e8e8}
+.payment-detail-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0}
+.payment-detail-row:last-child{border-bottom:none}
+.payment-detail-row .label{font-size:13px;color:#666;font-weight:500}
+.payment-detail-row .value{font-size:15px;color:var(--brown-dark);font-weight:700;font-family:monospace}
+
+.total-box{background:linear-gradient(135deg,var(--brown-main),var(--gold));color:white;padding:20px;border-radius:14px;margin-top:15px;display:flex;justify-content:space-between;align-items:center}
+.total-box .label{font-size:14px;font-weight:500}
+.total-box .amount{font-size:26px;font-weight:700;font-family:'Playfair Display',serif}
+
+.alert{padding:14px 18px;border-radius:12px;margin-bottom:15px;font-size:13px;display:flex;align-items:center;gap:10px}
+.alert-success{background:#d4edda;color:#155724;border:1px solid #c3e6cb}
+.alert-error{background:#f8d7da;color:#721c24;border:1px solid #f5c6cb}
+
+/* WhatsApp Button */
+.whatsapp-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;background:linear-gradient(135deg,#25D366,#128C7E);color:white;border:none;border-radius:12px;font-weight:600;font-size:15px;cursor:pointer;transition:all 0.3s;box-shadow:0 6px 20px rgba(37,211,102,0.35);text-decoration:none;width:100%;margin-top:15px;font-family:'Poppins',sans-serif}
+.whatsapp-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,0.5)}
+.whatsapp-btn i{font-size:20px}
+
+.whatsapp-info{background:linear-gradient(135deg,#e8f8ef,#d4f0dd);border:2px solid #25D366;border-radius:15px;padding:20px;margin:20px 0;text-align:center}
+.whatsapp-info i{font-size:36px;color:#25D366;margin-bottom:10px}
+.whatsapp-info h4{color:#128C7E;margin-bottom:8px;font-size:16px;font-weight:700}
+.whatsapp-info p{color:#555;font-size:13px;line-height:1.6;margin-bottom:12px}
+
+/* Success Modal */
+.success-icon{width:90px;height:90px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:45px;margin:0 auto 25px;box-shadow:0 10px 30px rgba(37,211,102,0.4);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+
+/* Dashboard */
+.dashboard-page{display:none;min-height:100vh;background:linear-gradient(180deg,var(--cream),#fff)}
+.dashboard-page.active{display:block}
+.dashboard-header{background:white;padding:20px 30px;box-shadow:0 4px 25px rgba(74,44,23,0.1);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(212,165,116,0.2)}
+.dashboard-container{max-width:1300px;margin:0 auto;padding:40px 20px}
+.dashboard-welcome{background:linear-gradient(135deg,var(--brown-dark),var(--brown-main),var(--gold));color:white;padding:40px;border-radius:30px;margin-bottom:40px;box-shadow:0 15px 40px rgba(107,58,42,0.25);position:relative;overflow:hidden}
+.dashboard-welcome::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,0.1),transparent 70%);border-radius:50%}
+.dashboard-welcome h2{font-size:34px;margin-bottom:10px;font-weight:700;font-family:'Playfair Display',serif;position:relative}
+.dashboard-welcome p{opacity:0.95;font-size:16px;position:relative}
+.dashboard-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;margin-bottom:40px}
+.stat-card{background:white;padding:30px;border-radius:22px;box-shadow:0 10px 35px rgba(74,44,23,0.08);transition:all 0.3s;border:1px solid rgba(212,165,116,0.15)}
+.stat-card:hover{transform:translateY(-5px);box-shadow:0 15px 45px rgba(74,44,23,0.15)}
+.stat-card i{font-size:36px;color:var(--gold-dark);margin-bottom:12px}
+.stat-card h3{font-size:32px;color:var(--brown-dark);margin-bottom:5px;font-family:'Playfair Display',serif}
+.stat-card p{color:#666;font-size:13px}
+.dashboard-section{background:white;padding:35px;border-radius:25px;box-shadow:0 10px 35px rgba(74,44,23,0.08);margin-bottom:30px;border:1px solid rgba(212,165,116,0.15)}
+.dashboard-section h3{color:var(--brown-dark);margin-bottom:22px;font-size:22px;display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif}
+.progress-bar{background:#eee;border-radius:12px;height:24px;overflow:hidden;margin-bottom:10px}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--brown-main),var(--gold));border-radius:12px;transition:width 1s ease;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:600}
+.course-list{display:flex;flex-direction:column;gap:12px}
+.course-item{display:flex;justify-content:space-between;align-items:center;padding:18px;background:var(--cream);border-radius:14px;transition:all 0.3s}
+.course-item:hover{background:#fff;box-shadow:0 4px 15px rgba(74,44,23,0.08)}
+.course-item-info{display:flex;align-items:center;gap:15px}
+.course-item-icon{width:50px;height:50px;background:linear-gradient(135deg,var(--brown-main),var(--gold));border-radius:14px;display:flex;align-items:center;justify-content:center;color:white;font-size:20px}
+.course-item h4{color:var(--brown-dark);font-size:15px;font-weight:600}
+.course-item span{color:#999;font-size:12px}
+.status-badge{padding:7px 16px;border-radius:20px;font-size:12px;font-weight:600}
+.status-completed{background:#d4edda;color:#155724}
+.status-progress{background:#fff3cd;color:#856404}
+.status-pending{background:#f8d7da;color:#721c24}
+.support-section{background:white;padding:35px;border-radius:25px;box-shadow:0 10px 35px rgba(74,44,23,0.08);border:1px solid rgba(212,165,116,0.15)}
+.support-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:18px}
+.support-item{display:flex;align-items:center;gap:12px;padding:16px;background:var(--cream);border-radius:14px;text-decoration:none;color:var(--brown-dark);transition:all 0.3s;border:1px solid transparent}
+.support-item:hover{background:var(--brown-main);color:white;border-color:var(--brown-main)}
+.support-item i{font-size:22px}
+
+.mobile-menu-btn{display:none;background:none;border:none;font-size:26px;color:var(--brown-dark);cursor:pointer}
+
+@media(max-width:768px){
+.mobile-menu-btn{display:block}
+nav{display:none;position:absolute;top:100%;left:0;right:0;background:white;flex-direction:column;padding:20px;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+nav.active{display:flex}
+.hero h2{font-size:36px}
+.hero{padding:80px 20px;min-height:auto}
+.hero-stats{gap:30px;margin-top:40px}
+.hero-stat .number{font-size:32px}
+.formations-grid{grid-template-columns:1fr}
+.modal{padding:30px 25px}
+.payment-methods{grid-template-columns:1fr}
+.section-title h2{font-size:32px}
+}
+</style>
+</head>
+<body>
+
+<div id="mainPage">
+<!-- Marquee amélioré -->
+<div class="marquee-container">
+<div class="marquee-text">
+<span>🎓 <strong>Nova Institute</strong> — Centre de Formation Professionnelle</span>
+<span class="divider">✦</span>
+<span>📍 Cité Militaire / L'École Fois d'Abraham</span>
+<span class="divider">✦</span>
+<span>📞 58046408 / 44699777</span>
+<span class="divider">✦</span>
+<span>✨ Formations pratiques & certifiantes — Inscription ouverte!</span>
+<span class="divider">✦</span>
+<span>🌟 Chimie Industrielle • Décoration • Sandalerie • Impression • Bouquet • Perruque</span>
+<span class="divider">✦</span>
+<span>💰 Natcash: 58046408 | Moncash: 44699777</span>
+<span class="divider">✦</span>
+<span>📧 institutenova61@gmail.com</span>
+</div>
+</div>
+
+<header>
+<div class="header-content">
+<div class="logo">
+<div class="logo-icon">NI</div>
+<div class="logo-text">
+<h1>Nova Institute</h1>
+<p>Excellence Professionnelle</p>
+</div>
+</div>
+<button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+<nav id="mainNav">
+<a href="#accueil">Accueil</a>
+<a href="#formations">Formations</a>
+<a href="#objectifs">Objectifs</a>
+<a href="#temoignages">Témoignages</a>
+<a href="#contact">Contact</a>
+<button class="btn btn-primary" onclick="openModal('loginModal')">Connexion</button>
+</nav>
+</div>
+</header>
+
+<!-- Hero luxueux -->
+<section class="hero" id="accueil">
+<div class="hero-content">
+<div class="hero-badge">✦ Centre de Formation d'Excellence ✦</div>
+<h2>Formez-vous aux<br>Métiers d'Avenir</h2>
+<p>Nova Institute vous offre des formations professionnelles pratiques et certifiantes dans plusieurs domaines d'excellence. Développez vos compétences et lancez votre carrière avec nous.</p>
+<div class="hero-buttons">
+<button class="btn-hero" onclick="document.getElementById('formations').scrollIntoView({behavior:'smooth'})">
+<i class="fas fa-graduation-cap"></i> &nbsp; Découvrir nos Formations
+</button>
+<button class="btn-hero-outline" onclick="openModal('registerModal')">
+<i class="fas fa-user-plus"></i> &nbsp; S'inscrire Maintenant
+</button>
+</div>
+<div class="hero-stats">
+<div class="hero-stat">
+<span class="number">6+</span>
+<span class="label">Formations</span>
+</div>
+<div class="hero-stat">
+<span class="number">500+</span>
+<span class="label">Étudiants</span>
+</div>
+<div class="hero-stat">
+<span class="number">100%</span>
+<span class="label">Pratique</span>
+</div>
+<div class="hero-stat">
+<span class="number">5★</span>
+<span class="label">Excellence</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Objectifs -->
+<section class="objectifs" id="objectifs">
+<div class="section-title">
+<span class="subtitle">Notre Mission</span>
+<h2>Nos Objectifs</h2>
+<div class="line"></div>
+<p>Ce que nous visons pour chaque étudiant</p>
+</div>
+<div class="objectifs-grid">
+<div class="objectif-card">
+<div class="objectif-icon"><i class="fas fa-graduation-cap"></i></div>
+<h3>Formation Pratique</h3>
+<p>Des cours pratiques avec des exercices concrets pour maîtriser chaque technique enseignée.</p>
+</div>
+<div class="objectif-card">
+<div class="objectif-icon"><i class="fas fa-certificate"></i></div>
+<h3>Certification</h3>
+<p>Obtenez un certificat de formation reconnu à la fin de votre parcours.</p>
+</div>
+<div class="objectif-card">
+<div class="objectif-icon"><i class="fas fa-users"></i></div>
+<h3>Accompagnement</h3>
+<p>Un suivi personnalisé pour chaque étudiant tout au long de la formation.</p>
+</div>
+<div class="objectif-card">
+<div class="objectif-icon"><i class="fas fa-briefcase"></i></div>
+<h3>Insertion Professionnelle</h3>
+<p>Préparez-vous à lancer votre propre entreprise ou intégrer le marché du travail.</p>
+</div>
+</div>
+</section>
+
+<!-- Catalogue -->
+<section id="formations">
+<div class="catalogue">
+<div class="section-title">
+<span class="subtitle">Catalogue</span>
+<h2>Nos Formations</h2>
+<div class="line"></div>
+<p>Découvrez nos programmes de formation professionnelle</p>
+</div>
+<div class="formations-grid">
+
+<div class="formation-card">
+<div class="formation-image" style="background:linear-gradient(135deg,#6b3a2a,#8b5a3c);">
+<i class="fas fa-flask"></i>
+<span class="formation-badge">2 Jours</span>
+<a href="https://wa.me/33552907?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20la%20formation%20Chimie%20Industrielle" target="_blank" class="formation-whatsapp" title="Contacter via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+<div class="formation-content">
+<h3>Chimie Industrielle</h3>
+<p>Apprenez à fabriquer des produits chimiques domestiques et industriels de qualité.</p>
+<div class="formation-details">
+<div class="formation-detail"><i class="fas fa-book"></i> Savons lavés, Parfum, Liquide, Mistoline</div>
+<div class="formation-detail"><i class="fas fa-clock"></i> Séminaire de 2 jours (9h - 13h)</div>
+<div class="formation-detail"><i class="fas fa-tag"></i> Au choix: 1000 G/cours | Complet: 2500 G</div>
+</div>
+<div class="formation-price">
+<div class="price-info"><span>Inscription</span><strong>1 000 G</strong></div>
+<div class="price-info"><span>Participation</span><strong>2 500 G</strong></div>
+<button class="btn-inscription" onclick="openInscription('Chimie Industrielle',1000,2500)">S'inscrire</button>
+</div>
+</div>
+</div>
+
+<div class="formation-card">
+<div class="formation-image" style="background:linear-gradient(135deg,#8b5a3c,#c49a6c);">
+<i class="fas fa-glass-cheers"></i>
+<span class="formation-badge">2 Mois</span>
+<a href="https://wa.me/33552907?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20la%20formation%20Décoration%20Événementielle" target="_blank" class="formation-whatsapp" title="Contacter via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+<div class="formation-content">
+<h3>Décoration Événementielle</h3>
+<p>Maîtrisez l'art de la décoration pour tous types d'événements spéciaux.</p>
+<div class="formation-details">
+<div class="formation-detail"><i class="fas fa-book"></i> Formation complète en décoration</div>
+<div class="formation-detail"><i class="fas fa-clock"></i> 2 mois (10h - 15h)</div>
+<div class="formation-detail"><i class="fas fa-tshirt"></i> Maillot inclus</div>
+</div>
+<div class="formation-price">
+<div class="price-info"><span>Inscription</span><strong>1 000 G</strong></div>
+<div class="price-info"><span>Participation</span><strong>9 500 G</strong></div>
+<button class="btn-inscription" onclick="openInscription('Décoration Événementielle',1000,9500)">S'inscrire</button>
+</div>
+</div>
+</div>
+
+<div class="formation-card">
+<div class="formation-image" style="background:linear-gradient(135deg,#4a2c17,#6b3a2a);">
+<i class="fas fa-shoe-prints"></i>
+<span class="formation-badge">2 Mois</span>
+<a href="https://wa.me/33552907?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20la%20formation%20Sandalerie" target="_blank" class="formation-whatsapp" title="Contacter via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+<div class="formation-content">
+<h3>Sandalerie</h3>
+<p>Apprenez la fabrication artisanale de sandales et chaussures de qualité.</p>
+<div class="formation-details">
+<div class="formation-detail"><i class="fas fa-book"></i> Fabrication complète de sandales</div>
+<div class="formation-detail"><i class="fas fa-clock"></i> 2 mois (10h - 15h)</div>
+<div class="formation-detail"><i class="fas fa-tshirt"></i> Maillot inclus</div>
+</div>
+<div class="formation-price">
+<div class="price-info"><span>Inscription</span><strong>1 000 G</strong></div>
+<div class="price-info"><span>Participation</span><strong>9 000 G</strong></div>
+<button class="btn-inscription" onclick="openInscription('Sandalerie',1000,9000)">S'inscrire</button>
+</div>
+</div>
+</div>
+
+<div class="formation-card">
+<div class="formation-image" style="background:linear-gradient(135deg,#6b3a2a,#c49a6c);">
+<i class="fas fa-print"></i>
+<span class="formation-badge">2 Jours</span>
+<a href="https://wa.me/33552907?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20la%20formation%20Impression%20Moderne" target="_blank" class="formation-whatsapp" title="Contacter via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+<div class="formation-content">
+<h3>Impression Moderne</h3>
+<p>Techniques d'impression moderne sur différents supports professionnels.</p>
+<div class="formation-details">
+<div class="formation-detail"><i class="fas fa-book"></i> Tableau PVC, Tableau lumineux, Bidon personnalisé</div>
+<div class="formation-detail"><i class="fas fa-clock"></i> Séminaire de 2 jours (9h - 13h)</div>
+</div>
+<div class="formation-price">
+<div class="price-info"><span>Inscription</span><strong>500 G</strong></div>
+<div class="price-info"><span>Participation</span><strong>4 000 G</strong></div>
+<button class="btn-inscription" onclick="openInscription('Impression Moderne',500,4000)">S'inscrire</button>
+</div>
+</div>
+</div>
+
+<div class="formation-card">
+<div class="formation-image" style="background:linear-gradient(135deg,#8b5a3c,#d4a574);">
+<i class="fas fa-seedling"></i>
+<span class="formation-badge">2 Jours</span>
+<a href="https://wa.me/33552907?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20la%20formation%20Confection%20Bouquet" target="_blank" class="formation-whatsapp" title="Contacter via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+<div class="formation-content">
+<h3>Confection Bouquet</h3>
+<p>Créez de magnifiques bouquets de fleurs artificielles et décoratives.</p>
+<div class="formation-details">
+<div class="formation-detail"><i class="fas fa-book"></i> Fleurs éternelles, Fleurs d'argent, Emballage bouteille, Cake money</div>
+<div class="formation-detail"><i class="fas fa-clock"></i> Séminaire de 2 jours (9h - 13h)</div>
+</div>
+<div class="formation-price">
+<div class="price-info"><span>Inscription</span><strong>1 000 G</strong></div>
+<div class="price-info"><span>Participation</span><strong>3 000 G</strong></div>
+<button class="btn-inscription" onclick="openInscription('Confection Bouquet',1000,3000)">S'inscrire</button>
+</div>
+</div>
+</div>
+
+<div class="formation-card">
+<div class="formation-image" style="background:linear-gradient(135deg,#4a2c17,#8b5a3c);">
+<i class="fas fa-cut"></i>
+<span class="formation-badge">4 Week-ends</span>
+<a href="https://wa.me/33552907?text=Bonjour%2C%20je%20suis%20intéressé(e)%20par%20la%20formation%20Confection%20Perruque" target="_blank" class="formation-whatsapp" title="Contacter via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+<div class="formation-content">
+<h3>Confection Perruque</h3>
+<p>Apprenez l'art de la confection et du styling professionnel de perruques.</p>
+<div class="formation-details">
+<div class="formation-detail"><i class="fas fa-book"></i> Confection et styling de perruques</div>
+<div class="formation-detail"><i class="fas fa-clock"></i> 4 week-ends (Samedi + 2 Dimanches, 9h-13h)</div>
+<div class="formation-detail"><i class="fas fa-gift"></i> Aiguilles gratuites</div>
+</div>
+<div class="formation-price">
+<div class="price-info"><span>Inscription</span><strong>1 000 G</strong></div>
+<div class="price-info"><span>Participation</span><strong>7 000 G</strong></div>
+<button class="btn-inscription" onclick="openInscription('Confection Perruque',1000,7000)">S'inscrire</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Témoignages -->
+<section class="temoignages" id="temoignages">
+<div class="section-title">
+<span class="subtitle">Avis Clients</span>
+<h2>Témoignages</h2>
+<div class="line"></div>
+<p>Ce que disent nos anciens étudiants</p>
+</div>
+<div class="temoignages-grid">
+<div class="temoignage-card">
+<div class="temoignage-header">
+<div class="temoignage-avatar">MJ</div>
+<div class="temoignage-info"><h4>Marie Joseph</h4><span>Chimie Industrielle</span></div>
+</div>
+<div class="temoignage-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+<p>"Grâce à Nova Institute, j'ai pu lancer ma propre entreprise de fabrication de savons. La formation est très pratique et les formateurs sont excellents!"</p>
+</div>
+<div class="temoignage-card">
+<div class="temoignage-header">
+<div class="temoignage-avatar">PD</div>
+<div class="temoignage-info"><h4>Princelin Dorcé</h4><span>Décoration Événementielle</span></div>
+</div>
+<div class="temoignage-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+<p>"Une formation complète qui m'a permis de devenir décoratrice professionnelle. Je recommande à 100%!"</p>
+</div>
+<div class="temoignage-card">
+<div class="temoignage-header">
+<div class="temoignage-avatar">SB</div>
+<div class="temoignage-info"><h4>Sandra Baptiste</h4><span>Confection Perruque</span></div>
+</div>
+<div class="temoignage-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+<p>"La formation en confection de perruques est exceptionnelle. J'ai maintenant ma propre clientèle et je gagne très bien ma vie."</p>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<div class="contact">
+<div class="section-title">
+<span class="subtitle">Nous Joindre</span>
+<h2>Contactez-nous</h2>
+<div class="line"></div>
+<p>Nous sommes là pour répondre à vos questions</p>
+</div>
+<div class="contact-grid">
+<div class="contact-card"><i class="fas fa-map-marker-alt"></i><h4>Adresse</h4><p>Cité Militaire / L'École Fois d'Abraham</p></div>
+<div class="contact-card"><i class="fas fa-phone"></i><h4>Téléphone</h4><p>58046408 / 44699777</p></div>
+<div class="contact-card"><i class="fab fa-whatsapp"></i><h4>WhatsApp</h4><p>33552907</p></div>
+<div class="contact-card"><i class="fas fa-envelope"></i><h4>Email</h4><p>institutenova61@gmail.com</p></div>
+<div class="contact-card"><i class="fas fa-money-bill-wave"></i><h4>Paiement</h4><p>Natcash (58046408)<br>Moncash (44699777)</p></div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-content">
+<div class="footer-section">
+<h4>Nova Institute</h4>
+<p>Centre de formation professionnelle dédié à l'excellence et au développement des compétences pratiques.</p>
+</div>
+<div class="footer-section">
+<h4>Formations</h4>
+<a href="#">Chimie Industrielle</a>
+<a href="#">Décoration Événementielle</a>
+<a href="#">Sandalerie</a>
+<a href="#">Impression Moderne</a>
+<a href="#">Confection Bouquet</a>
+<a href="#">Confection Perruque</a>
+</div>
+<div class="footer-section">
+<h4>Liens Utiles</h4>
+<a href="#accueil">Accueil</a>
+<a href="#formations">Formations</a>
+<a href="#objectifs">Objectifs</a>
+<a href="#temoignages">Témoignages</a>
+<a href="#contact">Contact</a>
+</div>
+<div class="footer-section">
+<h4>Contact</h4>
+<p><i class="fas fa-map-marker-alt"></i> Cité Militaire</p>
+<p><i class="fas fa-phone"></i> 58046408 / 44699777</p>
+<p><i class="fab fa-whatsapp"></i> 33552907</p>
+<p><i class="fas fa-envelope"></i> institutenova61@gmail.com</p>
+</div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 Nova Institute. Tous droits réservés.</p></div>
+</footer>
+</div>
+
+<!-- Dashboard -->
+<div class="dashboard-page" id="dashboardPage">
+<div class="dashboard-header">
+<div class="logo">
+<div class="logo-icon">NI</div>
+<div class="logo-text"><h1>Nova Institute</h1><p>Dashboard Étudiant</p></div>
+</div>
+<button class="btn btn-outline" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Déconnexion</button>
+</div>
+<div class="dashboard-container">
+<div class="dashboard-welcome">
+<h2>Bienvenue, <span id="studentName">Étudiant</span>!</h2>
+<p>Voici votre tableau de bord personnel</p>
+</div>
+<div class="dashboard-stats">
+<div class="stat-card"><i class="fas fa-book-open"></i><h3 id="statFormations">0</h3><p>Formations Inscrites</p></div>
+<div class="stat-card"><i class="fas fa-check-circle"></i><h3 id="statCompleted">0</h3><p>Cours Complétés</p></div>
+<div class="stat-card"><i class="fas fa-percentage"></i><h3 id="statProgress">0%</h3><p>Progression Globale</p></div>
+<div class="stat-card"><i class="fas fa-certificate"></i><h3 id="statCertificate">Non</h3><p>Certificat</p></div>
+</div>
+<div class="dashboard-section">
+<h3><i class="fas fa-chart-line"></i> Ma Progression</h3>
+<div id="progressSection"><p style="color:#666;text-align:center;padding:20px;">Aucune formation en cours</p></div>
+</div>
+<div class="dashboard-section">
+<h3><i class="fas fa-table"></i> Mes Formations</h3>
+<div class="course-list" id="courseList"><p style="color:#666;text-align:center;padding:20px;">Vous n'êtes inscrit à aucune formation</p></div>
+</div>
+<div class="support-section">
+<h3><i class="fas fa-headset"></i> Support & Assistance</h3>
+<p style="color:#666;font-size:14px;">Besoin d'aide? Contactez-nous via:</p>
+<div class="support-grid">
+<a href="https://wa.me/33552907" class="support-item" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+<a href="tel:58046408" class="support-item"><i class="fas fa-phone"></i><span>58046408</span></a>
+<a href="tel:44699777" class="support-item"><i class="fas fa-phone"></i><span>44699777</span></a>
+<a href="mailto:institutenova61@gmail.com" class="support-item"><i class="fas fa-envelope"></i><span>Email</span></a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal Inscription -->
+<div class="modal-overlay" id="registerModal">
+<div class="modal">
+<button class="modal-close" onclick="closeModal('registerModal')">&times;</button>
+<h2>Inscription</h2>
+<div id="registerAlert"></div>
+<form onsubmit="handleRegister(event)">
+<div class="form-group"><label>Nom Complet *</label><input type="text" id="regName" required placeholder="Votre nom complet"></div>
+<div class="form-group"><label>Email *</label><input type="email" id="regEmail" required placeholder="votre@email.com"></div>
+<div class="form-group"><label>Téléphone *</label><input type="tel" id="regPhone" required placeholder="Votre numéro"></div>
+<div class="form-group"><label>Formation Choisie *</label>
+<select id="regFormation" required onchange="updatePaymentTotal()">
+<option value="">-- Sélectionner --</option>
+<option value="Chimie Industrielle|1000|2500">Chimie Industrielle - 2 500 G</option>
+<option value="Décoration Événementielle|1000|9500">Décoration Événementielle - 9 500 G</option>
+<option value="Sandalerie|1000|9000">Sandalerie - 9 000 G</option>
+<option value="Impression Moderne|500|4000">Impression Moderne - 4 000 G</option>
+<option value="Confection Bouquet|1000|3000">Confection Bouquet - 3 000 G</option>
+<option value="Confection Perruque|1000|7000">Confection Perruque - 7 000 G</option>
+</select>
+</div>
+<div class="form-group"><label>Mot de passe *</label><input type="password" id="regPassword" required placeholder="Créer un mot de passe" minlength="4"></div>
+
+<div class="payment-info">
+<h4><i class="fas fa-credit-card"></i> Moyen de Paiement *</h4>
+<div class="payment-methods">
+<div class="payment-method" onclick="selectPayment('Natcash','58046408',this)">
+<i class="fas fa-mobile-alt"></i>
+<strong>Natcash</strong>
+<span>58046408</span>
+</div>
+<div class="payment-method" onclick="selectPayment('Moncash','44699777',this)">
+<i class="fas fa-wallet"></i>
+<strong>Moncash</strong>
+<span>44699777</span>
+</div>
+</div>
+<input type="hidden" id="regPaymentMethod" required>
+<input type="hidden" id="regPaymentNumber" required>
+
+<div class="payment-details" id="paymentDetails" style="display:none;">
+<div class="payment-detail-row"><span class="label">Méthode:</span><span class="value" id="payMethodDisplay">-</span></div>
+<div class="payment-detail-row"><span class="label">Numéro:</span><span class="value" id="payNumberDisplay">-</span></div>
+</div>
+
+<div class="total-box" id="totalBox" style="display:none;">
+<span class="label">Total à payer:</span>
+<span class="amount" id="totalAmount">0 G</span>
+</div>
+</div>
+
+<div class="form-group"><label>Numéro de Transaction *</label><input type="text" id="regTransaction" required placeholder="Ex: TXN123456789"></div>
+
+<button type="submit" class="form-submit">S'inscrire</button>
+<div class="form-switch">Déjà inscrit? <a onclick="switchModal('registerModal','loginModal')">Se connecter</a></div>
+</form>
+</div>
+</div>
+
+<!-- Modal Connexion - SANS code d'accès -->
+<div class="modal-overlay" id="loginModal">
+<div class="modal">
+<button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+<h2>Connexion Étudiant</h2>
+<div id="loginAlert"></div>
+<form onsubmit="handleLogin(event)">
+<div class="form-group"><label>Email *</label><input type="email" id="loginEmail" required placeholder="votre@email.com"></div>
+<div class="form-group"><label>Mot de passe *</label><input type="password" id="loginPassword" required placeholder="Votre mot de passe"></div>
+<button type="submit" class="form-submit">Se Connecter</button>
+<div class="form-switch">Pas encore inscrit? <a onclick="switchModal('loginModal','registerModal')">S'inscrire</a></div>
+</form>
+
+<div class="whatsapp-info">
+<i class="fas fa-key"></i>
+<h4>Vous n'avez pas encore votre code d'accès?</h4>
+<p>Après votre inscription, votre code d'accès personnel vous sera envoyé via WhatsApp. Cliquez sur le bouton ci-dessous pour le demander:</p>
+<a href="https://wa.me/33552907?text=Bonjour%2C%20je%20souhaite%20recevoir%20mon%20code%20d%27acc%C3%A8s%20pour%20la%20plateforme%20Nova%20Institute." target="_blank" class="whatsapp-btn">
+<i class="fab fa-whatsapp"></i> Demander mon Code d'Accès
+</a>
+</div>
+</div>
+</div>
+
+<!-- Modal Succès Inscription - SANS afficher le code -->
+<div class="modal-overlay" id="successModal">
+<div class="modal" style="text-align:center;">
+<button class="modal-close" onclick="closeModal('successModal')">&times;</button>
+<div class="success-icon"><i class="fas fa-check"></i></div>
+<h2 style="color:var(--brown-dark);">Inscription Réussie!</h2>
+<p style="color:#666;margin:15px 0;line-height:1.7;">Votre compte a été créé avec succès. <strong>Votre code d'accès personnel</strong> vous sera envoyé sous peu via WhatsApp.</p>
+
+<div class="whatsapp-info" style="margin:25px 0;">
+<i class="fas fa-key"></i>
+<h4>Comment obtenir votre code d'accès?</h4>
+<p>Cliquez sur le bouton ci-dessous pour contacter notre équipe et recevoir votre code d'accès personnel qui activera votre compte.</p>
+<a href="https://wa.me/33552907?text=Bonjour%2C%20je%20viens%20de%20m%27inscrire%20sur%20la%20plateforme%20Nova%20Institute.%20Je%20souhaite%20recevoir%20mon%20code%20d%27acc%C3%A8s." target="_blank" class="whatsapp-btn">
+<i class="fab fa-whatsapp"></i> Demander mon Code d'Accès
+</a>
+</div>
+
+<p style="color:#888;font-size:13px;margin-bottom:20px;">
+<i class="fas fa-info-circle"></i> Une fois votre code reçu, utilisez-le pour vous connecter et accéder à votre espace étudiant.
+</p>
+<button class="form-submit" onclick="closeModal('successModal')">Compris!</button>
+</div>
+</div>
+
+<script>
+function getStudents(){return JSON.parse(localStorage.getItem('novaStudents')||'[]')}
+function saveStudents(s){localStorage.setItem('novaStudents',JSON.stringify(s))}
+function generateAccessCode(){const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let code='NOVA-';for(let i=0;i<6;i++)code+=c.charAt(Math.floor(Math.random()*c.length));return code}
+
+function openModal(id){document.getElementById(id).classList.add('active')}
+function closeModal(id){document.getElementById(id).classList.remove('active')}
+function switchModal(from,to){closeModal(from);setTimeout(()=>openModal(to),200)}
+function toggleMenu(){document.getElementById('mainNav').classList.toggle('active')}
+
+let selectedPaymentMethod='';
+let selectedPaymentNumber='';
+
+function openInscription(formation,inscription,participation){
+openModal('registerModal');
+setTimeout(()=>{
+const sel=document.getElementById('regFormation');
+sel.value=formation+'|'+inscription+'|'+participation;
+updatePaymentTotal();
+},100);
+}
+
+function selectPayment(method,number,el){
+selectedPaymentMethod=method;
+selectedPaymentNumber=number;
+document.getElementById('regPaymentMethod').value=method;
+document.getElementById('regPaymentNumber').value=number;
+document.querySelectorAll('.payment-method').forEach(e=>e.classList.remove('selected'));
+el.classList.add('selected');
+document.getElementById('paymentDetails').style.display='block';
+document.getElementById('payMethodDisplay').textContent=method;
+document.getElementById('payNumberDisplay').textContent=number;
+updatePaymentTotal();
+}
+
+function updatePaymentTotal(){
+const sel=document.getElementById('regFormation').value;
+if(!sel||!selectedPaymentMethod){
+document.getElementById('totalBox').style.display='none';
+return;
+}
+const parts=sel.split('|');
+const inscription=parseInt(parts[1]);
+const participation=parseInt(parts[2]);
+const total=inscription+participation;
+document.getElementById('totalBox').style.display='flex';
+document.getElementById('totalAmount').textContent=total.toLocaleString('fr-FR')+' G';
+}
+
+function handleRegister(e){
+e.preventDefault();
+const name=document.getElementById('regName').value;
+const email=document.getElementById('regEmail').value;
+const phone=document.getElementById('regPhone').value;
+const formationData=document.getElementById('regFormation').value;
+const password=document.getElementById('regPassword').value;
+const paymentMethod=document.getElementById('regPaymentMethod').value;
+const paymentNumber=document.getElementById('regPaymentNumber').value;
+const transaction=document.getElementById('regTransaction').value;
+
+if(!paymentMethod){
+document.getElementById('registerAlert').innerHTML='<div class="alert alert-error"><i class="fas fa-exclamation-circle"></i> Veuillez choisir un moyen de paiement!</div>';
+return;
+}
+
+const parts=formationData.split('|');
+const formation=parts[0];
+const inscription=parseInt(parts[1]);
+const participation=parseInt(parts[2]);
+
+const students=getStudents();
+if(students.find(s=>s.email===email)){
+document.getElementById('registerAlert').innerHTML='<div class="alert alert-error"><i class="fas fa-exclamation-circle"></i> Cet email est déjà utilisé!</div>';
+return;
+}
+
+// Générer le code mais NE PAS l'afficher - il sera envoyé via WhatsApp
+const accessCode=generateAccessCode();
+const newStudent={
+id:Date.now(),name,email,phone,formation,inscription,participation,
+total:inscription+participation,password,paymentMethod,paymentNumber,transaction,
+accessCode, // stocké mais pas affiché
+accessValidated:false, // le compte n'est pas encore activé
+progress:{},registeredAt:new Date().toISOString()
+};
+newStudent.progress[formation]={percentage:0,status:'pending',enrolledAt:new Date().toISOString()};
+students.push(newStudent);
+saveStudents(students);
+
+// Afficher le modal de succès SANS le code
+closeModal('registerModal');
+openModal('successModal');
+e.target.reset();
+document.getElementById('registerAlert').innerHTML='';
+document.getElementById('paymentDetails').style.display='none';
+document.getElementById('totalBox').style.display='none';
+document.querySelectorAll('.payment-method').forEach(el=>el.classList.remove('selected'));
+selectedPaymentMethod='';selectedPaymentNumber='';
+}
+
+function handleLogin(e){
+e.preventDefault();
+const email=document.getElementById('loginEmail').value;
+const password=document.getElementById('loginPassword').value;
+const students=getStudents();
+const student=students.find(s=>s.email===email&&s.password===password);
+if(!student){
+document.getElementById('loginAlert').innerHTML='<div class="alert alert-error"><i class="fas fa-exclamation-circle"></i> Email ou mot de passe incorrect!</div>';
+return;
+}
+localStorage.setItem('novaCurrentStudent',JSON.stringify(student));
+closeModal('loginModal');
+showDashboard(student);
+e.target.reset();
+document.getElementById('loginAlert').innerHTML='';
+}
+
+function showDashboard(student){
+document.getElementById('mainPage').style.display='none';
+document.getElementById('dashboardPage').classList.add('active');
+document.getElementById('studentName').textContent=student.name;
+document.getElementById('statFormations').textContent=student.formations?student.formations.length:1;
+const formations=Object.keys(student.progress);
+let totalProgress=0,completedCount=0;
+formations.forEach(f=>{totalProgress+=student.progress[f].percentage;if(student.progress[f].status==='completed')completedCount++});
+const avgProgress=formations.length>0?Math.round(totalProgress/formations.length):0;
+document.getElementById('statProgress').textContent=avgProgress+'%';
+document.getElementById('statCompleted').textContent=completedCount;
+document.getElementById('statCertificate').textContent=avgProgress>=100?'Oui':'Non';
+
+const progressSection=document.getElementById('progressSection');
+if(formations.length>0){
+let html='';
+formations.forEach(f=>{
+const p=student.progress[f];
+html+='<div style="margin-bottom:20px;"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-weight:600;color:var(--brown-dark);">'+f+'</span><span style="color:var(--brown-light);">'+p.percentage+'%</span></div><div class="progress-bar"><div class="progress-fill" style="width:'+p.percentage+'%;">'+p.percentage+'%</div></div></div>';
+});
+progressSection.innerHTML=html;
+}
+
+const courseList=document.getElementById('courseList');
+if(formations.length>0){
+let html='';
+const icons={'Chimie Industrielle':'fa-flask','Décoration Événementielle':'fa-glass-cheers','Sandalerie':'fa-shoe-prints','Impression Moderne':'fa-print','Confection Bouquet':'fa-seedling','Confection Perruque':'fa-cut'};
+formations.forEach(f=>{
+const p=student.progress[f];
+const statusClass=p.status==='completed'?'status-completed':p.status==='in-progress'?'status-progress':'status-pending';
+const statusText=p.status==='completed'?'Complété':p.status==='in-progress'?'En cours':'En attente';
+html+='<div class="course-item"><div class="course-item-info"><div class="course-item-icon"><i class="fas '+(icons[f]||'fa-book')+'"></i></div><div><h4>'+f+'</h4><span>Inscrit le '+new Date(p.enrolledAt).toLocaleDateString('fr-FR')+'</span></div></div><span class="status-badge '+statusClass+'">'+statusText+'</span></div>';
+});
+courseList.innerHTML=html;
+}
+}
+
+function logout(){
+localStorage.removeItem('novaCurrentStudent');
+document.getElementById('dashboardPage').classList.remove('active');
+document.getElementById('mainPage').style.display='block';
+}
+
+window.addEventListener('load',()=>{
+const currentStudent=localStorage.getItem('novaCurrentStudent');
+if(currentStudent){
+const student=JSON.parse(currentStudent);
+const students=getStudents();
+const existing=students.find(s=>s.id===student.id);
+if(existing)showDashboard(existing);
+else localStorage.removeItem('novaCurrentStudent');
+}
+});
+
+document.querySelectorAll('.modal-overlay').forEach(overlay=>{
+overlay.addEventListener('click',(e)=>{if(e.target===overlay)overlay.classList.remove('active')});
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+anchor.addEventListener('click',function(e){
+const href=this.getAttribute('href');
+if(href.length>1){
+e.preventDefault();
+const target=document.querySelector(href);
+if(target){target.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('mainNav').classList.remove('active')}
+}
+});
+});
+</script>
+</body>
+</html>
